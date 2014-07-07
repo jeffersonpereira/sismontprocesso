@@ -7,18 +7,19 @@ appModule.controller('funcionarioController', function ($scope, $modal, requisic
         $scope.assuntos = data;
     })
 
-    /*Modal*/
     $scope.open = function () {
         var modalInstance = $modal.open({
             templateUrl: 'dependente.html',
-            controller: DependenteController,
-            resolve: {
-                dependentes: function () {
-                    return $scope.funcionario.dependentes;
-                }
-            }
+            controller: dependenteController
         });
-    }
+
+        modalInstance.result.then(function (dependente) {
+            $scope.funcionario.dependentes.push(dependente);
+            
+        });
+    };
+
+    $scope.dependentes = [{ nome: 'Perla Chaves Soares da Silva', nascimento: '16/09/2007' }, { nome: 'Mara Cleide Chaves Soares', nascimento: '22/10/1984' }];
 
     $scope.funcionario = {
         nome: 'Jefferson Pereira da Silva',
@@ -66,15 +67,14 @@ appModule.controller('funcionarioController', function ($scope, $modal, requisic
     };
 });
 
-
-var DependenteController = function ($scope, $modalInstance, dependentes) {
-    $scope.dependentes = dependentes;
+var dependenteController = function ($scope, $modalInstance) {
+    $scope.dependente = {nome:'',nascimento:''};
     $scope.ok = function () {
-        $scope.dependentes.push($scope.dependente);
-        $modalInstance.close();
+        alert($scope.dependente.nome);
+        $modalInstance.close($scope.dependente);
     };
 
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
     };
-};
+}
