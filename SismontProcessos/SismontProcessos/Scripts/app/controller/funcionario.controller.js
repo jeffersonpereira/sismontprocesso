@@ -42,6 +42,8 @@ appModule.controller('funcionarioController', function ($scope, $modal, requisic
         celular: '7191952021',
         pai: 'Jose Lopes Guirra',
         mae: 'Raimunda Pereira da Silva',
+        cargo: 'Programador',
+        pis: '99999999999',
         dependentes: [{ nome: 'Perla Chaves Soares da Silva', nascimento: '16/09/2007', tipo: 0, parentesco: 1 }, { nome: 'Mara Cleide Chaves Soares', nascimento: '22/10/1984', tipo: 0, parentesco: 1 }]
     };
     $scope.add = function () {
@@ -70,7 +72,6 @@ appModule.controller('funcionarioController', function ($scope, $modal, requisic
 var dependenteController = function ($scope, $modalInstance) {
     $scope.dependente = {nome:'',nascimento:'',tipo:'',parentesco:'',sexo:'',cpf:''};
     $scope.ok = function () {
-        alert($scope.dependente.nome);
         $modalInstance.close($scope.dependente);
     };
 

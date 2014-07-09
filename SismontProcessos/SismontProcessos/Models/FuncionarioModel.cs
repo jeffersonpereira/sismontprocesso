@@ -72,13 +72,20 @@ namespace SismontProcessos.Models
         public string cpf { get; set; }
         public string rg { get; set; }
         public string pis { get; set; }
+        public string cnh { get; set; }
+        public string categoria_cnh { get; set; }
+        public DateTime? validade_cnh { get; set; }
         public string ctps { get; set; }
         public string serie { get; set; }
         public DateTime admissao { get; set; }
+        public DateTime? data_emissao_rg { get; set; }
         public string titulo_eleitor { get; set; }
         public string zona { get; set; }
         public string secao { get; set; }
+        public string cargo { get; set; }
         public decimal salario { get; set; }
+        public string naturalidade { get; set; }
+        public string uf_naturalidade { get; set; }
         public IList<DependenteModel> dependentes { get; set; }
     }
     [Serializable]

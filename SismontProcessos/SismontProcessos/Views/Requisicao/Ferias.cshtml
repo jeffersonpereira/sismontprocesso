@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Ferias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-app="feriasApp">
+    <div ng-app="feriasConbtroller">
+        <form>
+            @Html.Partial("RequisicaoTemplate")
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="control-label">Colaborador</label>
+                    <select ng-options="funcionario.nome for funcionario in funcionarios" ng-model="funcionario" class="form-control"></select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="control-label">Ínicio do Gozo</label>
+                    <input type="text" class="form-control" ng-model="ferias.inicio_gozo" data-provide="datepicker" data-date-format="dd/mm/yyyy" />
+                </div>
+                <div class="form-group col-md-3">
+                    <label class="control-label">Fim do Gozo</label>
+                    <input type="text" class="form-control" ng-model="ferias.inicio_fim" data-provide="datepicker" data-date-format="dd/mm/yyyy" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label class="control-label">Observação</label>
+                    <textarea class="form-control" ng-model="ferias.observacao"></textarea>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Salvar</button>
+            <button class="btn btn-default" type="reset">Limpar</button>
+        </form>
+    </div>
+</div>
+

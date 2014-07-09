@@ -1,3 +1,6 @@
+*.cache
+*.pdb
+*.suo
 # Object files
 *.o
 *.ko

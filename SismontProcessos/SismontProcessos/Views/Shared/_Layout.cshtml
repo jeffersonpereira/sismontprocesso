@@ -140,5 +140,12 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/tema")
     @RenderSection("scripts", required: false)
+    <script>
+    jQuery(function ($) {
+        $("#telefone").mask("(99)9999-9999");
+        $("#cpf").mask("999.999.999-99");
+        $("#pis").mask("9.999.999.999-9");
+    });
+    </script>
 </body>
 </html>
