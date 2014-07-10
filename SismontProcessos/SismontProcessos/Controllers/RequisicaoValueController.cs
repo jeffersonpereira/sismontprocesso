@@ -58,10 +58,13 @@ namespace SismontProcessos.Controllers
                         if (requisicao != null)
                         {
                             DoPost<xerife_requisicao>(requisicao);
-                            _context.Context.SaveChanges();
-                            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, requisicao);
-                            response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = requisicao.requisicao_id }));
-                            return response;
+                            if (_context.Context.SaveChanges() > 0)
+                            {
+                                SendMail(requisicao);
+                                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, requisicao);
+                                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = requisicao.requisicao_id }));
+                                return response;
+                            }
 
                         }
                     }

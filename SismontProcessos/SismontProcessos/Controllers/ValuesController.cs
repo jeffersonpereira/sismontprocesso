@@ -7,6 +7,7 @@ using System.Web.Http;
 using Breeze.ContextProvider.EF6;
 using SismontProcessos.DB;
 using Breeze.WebApi2;
+using System.Net.Mail;
 
 namespace SismontProcessos.Controllers
 {
@@ -57,6 +58,24 @@ namespace SismontProcessos.Controllers
         protected virtual void DoUpdate<T>(T entity,T entity2) where T : class
         {
             _context.Context.UpdateObject<T>(entity, entity2);
+        }
+
+         protected virtual void SendMail(xerife_requisicao requisicao)
+        {
+            SmtpClient client = new SmtpClient("smtp.gmail.com");
+            client.Port = 587;
+            client.EnableSsl = true;
+            client.Timeout = 100000;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            client.Credentials = new NetworkCredential("remetente@conta-t.com", "senha");
+            MailMessage mail = new MailMessage();
+            mail.Subject = requisicao.assunto;
+            mail.Priority = (MailPriority)requisicao.prioridade;
+            mail.From = new MailAddress("remetente@conta-t.com");
+            mail.To.Add("destinatario@conta-t.com");
+            mail.Body = "Uma nova requisição foi relizada";
+            client.Send(mail);
         }
     }
 }

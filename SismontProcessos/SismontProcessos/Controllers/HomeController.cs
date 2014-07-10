@@ -8,7 +8,13 @@ namespace SismontProcessos.Controllers
 {
     public class HomeController : Controller
     {
+        [Authorize]
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Signin()
         {
             return View();
         }

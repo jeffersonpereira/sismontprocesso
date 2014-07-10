@@ -1,7 +1,7 @@
 ﻿var appModule = angular.module('app', ['ngResource', 'ngGrid', 'ui.bootstrap']);
 
 
-appModule.controller('funcionarioController', function ($scope, $modal, requisicaoFactory, assuntoFactory) {
+appModule.controller('funcionarioController', function ($scope, $http, $window, $modal, requisicaoFactory, assuntoFactory) {
 
     assuntoFactory.query(function (data) {
         $scope.assuntos = data;
@@ -18,6 +18,18 @@ appModule.controller('funcionarioController', function ($scope, $modal, requisic
             dependente = null;
         });
     };
+
+    $scope.getEndereco = function () {
+        if ($scope.funcionario.cep.length == 8) {
+            $http.get('http://cep.correiocontrol.com.br/' + $scope.funcionario.cep + '.json').
+                success(function (data) {
+                    $scope.funcionario.endereco = data.logradouro;
+                    $scope.funcionario.bairro = data.bairro;
+                    $scope.funcionario.uf = data.uf;
+                    $scope.funcionario.municipio = data.localidade;
+                });
+        }
+    }
 
     $scope.dependentes = [{ nome: 'Perla Chaves Soares da Silva', nascimento: '16/09/2007' }, { nome: 'Mara Cleide Chaves Soares', nascimento: '22/10/1984' }];
 
@@ -51,7 +63,10 @@ appModule.controller('funcionarioController', function ($scope, $modal, requisic
         $scope.funcionario.assunto_requisicao_id = $scope.assunto.assunto_requisicao_id;
         $scope.funcionario.data = new Date();
         $scope.funcionario.tipo_requisicao = 'funcionario';
-        requisicaoFactory.save($scope.funcionario);
+        requisicaoFactory.save($scope.funcionario).$promise.then(function () {
+            $window.location.href = "http://localhost:1328/Requisicao";
+        });
+
     };
 
     this.columns =

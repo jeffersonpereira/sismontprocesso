@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 using SismontProcessos.DB;
+using System.Xml.Serialization;
 
 namespace SismontProcessos.Models
 {
@@ -41,6 +42,10 @@ namespace SismontProcessos.Models
                     }
                 }
             }
+            //System.IO.TextWriter file = new System.IO.StreamWriter(@"d:\teste.xml");
+            //XmlSerializer x = new XmlSerializer(typeof(FuncionarioModel));
+            //x.Serialize(file, funcionario);
+
             var requisisao = new xerife_requisicao();
             requisisao.tipo = Convert.ToInt32(value.tipo);
             requisisao.assunto_requisicao_id = Convert.ToInt32(value.assunto_requisicao_id);

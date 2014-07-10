@@ -1,7 +1,7 @@
 ﻿<div class="row">
     <div class="form-group col-md-4">
         <label for="tipo">Tipo</label>
-        <select id="tipo" class="form-control" ng-model="tipo">
+        <select id="tipo" class="form-control" ng-model="tipo" required>
             <option value="0">Solicitação</option>
             <option value="1">Tarefa</option>
         </select>
@@ -9,7 +9,7 @@
 
     <div class="form-group col-md-4">
         <label for="prioridade">Prioridade</label>
-        <select id="prioridade" ng-options="prioridade" class="form-control">
+        <select id="prioridade" ng-options="prioridade" class="form-control" required>
             <option value="0">Baixa</option>
             <option value="1">Média</option>
             <option value="2">Alta</option>
@@ -17,7 +17,7 @@
     </div>
     <div class="form-group col-md-4">
         <label for="assunto">Assunto</label>
-        <select ng-options="assunto.descricao for assunto in assuntos" ng-model="assunto" class="form-control"></select>
+        <select ng-options="assunto.descricao for assunto in assuntos" ng-model="assunto" class="form-control" required></select>
     </div>
 </div>   
 <div class="row">
