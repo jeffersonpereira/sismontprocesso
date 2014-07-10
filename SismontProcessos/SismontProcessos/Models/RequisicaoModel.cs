@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Xerife.Data;
+using SismontProcessos.DB;
 
 namespace SismontProcessos.Models
 {

@@ -1,12 +1,13 @@
-﻿using SismontProcessos.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Xerife.Data;
+using System.Web.Http.Cors;
+using Breeze.ContextProvider.EF6;
+using SismontProcessos.DB;
+using SismontProcessos.Models;
 
 namespace SismontProcessos.Controllers
 {
@@ -29,39 +30,51 @@ namespace SismontProcessos.Controllers
         [HttpPut]
         public void Update([FromBody]xerife_requisicao requisicao)
         {
-            var original = _context.xerife_requisicao.FirstOrDefault(x => x.requisicao_id == requisicao.requisicao_id);
+            var original = _context.Context.xerife_requisicao.FirstOrDefault(x => x.requisicao_id == requisicao.requisicao_id);
             DoUpdate<xerife_requisicao>(requisicao, original);
         }
 
-        [HttpPost]
-        public void AdicionarFuncionario([FromBody]dynamic value)
+        [HttpPost,ActionName("save")]
+        public HttpResponseMessage AdicionarFuncionario([FromBody]dynamic value)
         {
-            
-            if (value!= null)
+            try
             {
-                xerife_requisicao requisicao = null;
-                string tipo = value.tipo_requisicao.ToString() ?? string.Empty;
-                switch(tipo)
+                if (ModelState.IsValid)
                 {
-                    case "funcionario": requisicao = FuncionarioModel.CreateObject(value);
-                        break;
-                    case "ferias": requisicao = FeriasModel.CreateObject(value);
-                        break;
-                    case "rescisao": requisicao = RescisaoModel.CreateObject(value);
-                        break;
+
+                    if (value != null)
+                    {
+                        xerife_requisicao requisicao = null;
+                        string tipo = value.tipo_requisicao.ToString() ?? string.Empty;
+                        switch (tipo)
+                        {
+                            case "funcionario": requisicao = FuncionarioModel.CreateObject(value);
+                                break;
+                            case "ferias": requisicao = FeriasModel.CreateObject(value);
+                                break;
+                            case "rescisao": requisicao = RescisaoModel.CreateObject(value);
+                                break;
+                        }
+                        if (requisicao != null)
+                        {
+                            DoPost<xerife_requisicao>(requisicao);
+                            _context.Context.SaveChanges();
+                            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, requisicao);
+                            response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = requisicao.requisicao_id }));
+                            return response;
+
+                        }
+                    }
                 }
-                if(requisicao!=null)
+                else
                 {
-                    DoPost<xerife_requisicao>(requisicao);
-                    try
-                    {
-                        _context.SaveChanges();
-                    }
-                    catch(Exception ex)
-                    {
-                        throw new Exception(ex.Message);
-                    }
+                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
                 }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

@@ -10,8 +10,8 @@ D:\Sismont\conta-t\src\vs fontes\e-Process\e-Process\Xerife.Data\obj\Debug\Xerif
 D:\Códigos Fontes\Sistema de Processos\Xerife.Data\bin\Debug\Xerife.Data.dll.config
 D:\Códigos Fontes\Sistema de Processos\Xerife.Data\bin\Debug\Xerife.Data.dll
 D:\Códigos Fontes\Sistema de Processos\Xerife.Data\bin\Debug\Xerife.Data.pdb
-D:\Códigos Fontes\Sistema de Processos\Xerife.Data\obj\Debug\Xerife.Data.dll
-D:\Códigos Fontes\Sistema de Processos\Xerife.Data\obj\Debug\Xerife.Data.pdb
 D:\Códigos Fontes\Sistema de Processos\Xerife.Data\bin\Debug\System.Web.Providers.dll
 D:\Códigos Fontes\Sistema de Processos\Xerife.Data\bin\Debug\System.Web.Providers.xml
+D:\Códigos Fontes\Sistema de Processos\Xerife.Data\obj\Debug\Xerife.Data.dll
+D:\Códigos Fontes\Sistema de Processos\Xerife.Data\obj\Debug\Xerife.Data.pdb
 D:\Códigos Fontes\Sistema de Processos\Xerife.Data\obj\Debug\Xerife.Data.csprojResolveAssemblyReference.cache

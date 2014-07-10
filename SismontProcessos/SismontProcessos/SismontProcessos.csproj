@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SismontProcessos</RootNamespace>
     <AssemblyName>SismontProcessos</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -46,14 +46,28 @@
     <Reference Include="AttributeRouting.Web">
       <HintPath>..\packages\AttributeRouting.Core.Web.3.5.6\lib\net40\AttributeRouting.Web.dll</HintPath>
     </Reference>
+    <Reference Include="AttributeRouting.Web.Http">
+      <HintPath>..\packages\AttributeRouting.Core.Http.3.5.6\lib\net40\AttributeRouting.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="AttributeRouting.Web.Http.WebHost">
+      <HintPath>..\packages\AttributeRouting.WebApi.3.5.6\lib\net40\AttributeRouting.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="AttributeRouting.Web.Mvc">
       <HintPath>..\packages\AttributeRouting.3.5.6\lib\net40\AttributeRouting.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Breeze.ContextProvider">
-      <HintPath>..\packages\Breeze.Server.ContextProvider.1.4.13\lib\Breeze.ContextProvider.dll</HintPath>
+    <Reference Include="Breeze.ContextProvider, Version=1.4.0.0, Culture=neutral, PublicKeyToken=f6085f1a45e2ac59, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Breeze.Server.ContextProvider.1.4.14\lib\Breeze.ContextProvider.dll</HintPath>
     </Reference>
-    <Reference Include="Breeze.ContextProvider.EF6">
-      <HintPath>..\packages\Breeze.Server.ContextProvider.EF6.1.4.13\lib\Breeze.ContextProvider.EF6.dll</HintPath>
+    <Reference Include="Breeze.ContextProvider.EF6, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f6085f1a45e2ac59, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Breeze.Server.ContextProvider.EF6.1.4.14\lib\Breeze.ContextProvider.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="Breeze.Sharp">
+      <HintPath>..\packages\Breeze.Sharp.0.6.0.2\lib\portable-net45+wp80+win\Breeze.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Breeze.WebApi2">
+      <HintPath>..\packages\Breeze.Server.WebApi2.1.4.14\lib\Breeze.WebApi2.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -63,6 +77,23 @@
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm.Portable">
+      <HintPath>..\packages\Breeze.Sharp.0.6.0.2\lib\portable-net45+wp80+win\Microsoft.Data.Edm.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData.Portable">
+      <HintPath>..\packages\Breeze.Sharp.0.6.0.2\lib\portable-net45+wp80+win\Microsoft.Data.OData.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client.Portable">
+      <HintPath>..\packages\Breeze.Sharp.0.6.0.2\lib\portable-net45+wp80+win\Microsoft.Data.Services.Client.Portable.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -72,24 +103,42 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial.Portable">
+      <HintPath>..\packages\Breeze.Sharp.0.6.0.2\lib\portable-net45+wp80+win\System.Spatial.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.0\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Http, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.1.2\lib\net45\System.Web.Http.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.0\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Http.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.0\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.5.0.0\lib\net45\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.1.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -146,8 +195,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\AttributeRoutingConfig.cs" />
     <Compile Include="App_Start\AttributeRoutingHttpConfig.cs" />
+    <Compile Include="App_Start\BreezeWebApiConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -175,6 +224,620 @@
     <Compile Include="Controllers\RequisicaoValueController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="CorsHandler.cs" />
+    <Compile Include="DB\Partials\DataContext.cs" />
+    <Compile Include="DB\Partials\IRequisicao.cs" />
+    <Compile Include="DB\Partials\xerife_documento.cs" />
+    <Compile Include="DB\Partials\xerife_movimentacao_requisicao.cs" />
+    <Compile Include="DB\Partials\xerife_requisicao.cs" />
+    <Compile Include="DB\Xerife.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Xerife.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Xerife.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Xerife.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Xerife.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_acumulador_fiscal.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_acumulador_guia.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_acumulador_servico.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_alocacao_tomador.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_anexo_mensagem.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_anotacao_funcionario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_anotacao_parceiro.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_apuracao_imposto.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_arquivo.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_arquivo_bancario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_assunto_requisicao.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_atestado.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_auditoria.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_banco.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_bloqueio_mensal.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_calendario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_calendario_item.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_campo_usuario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_cargo.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_categoria.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_categoria_financeira.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_centro_custo.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_ciap.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_ciap_item.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_classe_fiscal.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_cnae.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_codigo_fiscal.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_conducao.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_conducao_funcionario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_conducao_item.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_configuracao.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_configuracao_folha.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_contador.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_conta_bancaria.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_conta_financeira.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_contra_partida.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_cookie.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_deducoes.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_departamento.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_dependente_funcionario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_detalhamento_fiscal.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_documento.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_documento_portal.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_ecf.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_empresa.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_empresa_comercial.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_empresa_contabil.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_empresa_fiscal.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_empresa_folha.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_estoque.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_estorno.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_estorno_item.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_evento.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_evento_automatizado.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_evento_departamento.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_evento_filial.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_evento_funcionario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_evento_parametro.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_evento_programado.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_evento_programado_item.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_evento_sindicato.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_evento_tomador.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_evento_usuario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_exame_medico.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_exposicao_fator_risco.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_extrato.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_falta.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_favorito.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_ferias.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_filial.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_folha.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_folha_plano_saude_dependente.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_folha_plano_saude_funcionario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_forma_pagamento.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_formula.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_fpas.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_funcionario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_funcionario_dados.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_funcionario_inativo.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_funcionario_situacao.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_gerador_id.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_gps.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_grau_instrucao.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_historico_contabil.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_horario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_horario_item.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_imposto.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_incidencia.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_incidencia_opcoes.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_indice.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_indice_item.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_infaz.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_integracao.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_integracao_fiscal.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_integracao_generica.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_item_cofins.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_item_ecf.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_item_fiscal.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_item_icms.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_item_ii.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_item_ipi.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_item_issqn.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_item_lancamento_servico.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_item_parcela.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_item_pis.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_item_produto.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_item_regime_tributario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_item_transporte.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_lancamento_contabil.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_lancamento_fiscal.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_lancamento_importado.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_lancamento_servico.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_livro_fiscal.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_livro_fiscal_item.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_lote_contabil.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_mapa_tributario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_mapeamento_tabela.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_mensagem.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_modelo_nota_fiscal.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_moeda.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_movimentacao_requisicao.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_movimentacao_sefip.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_municipio.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_nacionalidade.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_natureza_juridica.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_nota_ct.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_ocorrencia.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_outras_receitas.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_outras_receitas_item.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_parceiro.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_parceiro_desconto.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_parcela_servico.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_pasta_mensagem.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_patrimonio.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_permissao.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_permissao_filial.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_permissao_regra.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_piso_salarial.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_plano_centro_custo.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_plano_conta.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_plano_filial.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_plano_saude.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_plano_saude_dependente.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_plano_saude_filial.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_plano_saude_funcionario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_ppp.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_produto.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_profissiografia.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_protocolo.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_rateio_financeiro.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_recolhimento_sefip.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_refeicao_funcionario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_regime_tributario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_regra.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_regra_acesso.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_regra_acesso_item.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_requisicao.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_rescisao.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_responsavel_registro_ppp.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_retencao.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_saldo_anterior_produto.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_saldo_centro_custo.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_saldo_patrimonio.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_saldo_produto.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_schema.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_sindicato.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_sindicato_parametro.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_sip.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_situacao_fiscal.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_situacao_folha.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_sped_c420.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_sped_c460.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_sped_c470.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_sped_c490.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_tabela.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_tabela_campo.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_tabela_item.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_tabela_servico.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_tipo_contrato.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_tipo_documento.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_tipo_evento.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_tipo_extrato.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_tipo_parceiro.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_titulo.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_titulo_tag.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_tomador.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_tomador_mensal.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_total_contabil.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_total_contabil_usuario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_uf.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_unidade.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_usuario.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_usuario_regra.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_vale_refeicao.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_vale_valor.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_variavel.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_variavel_valor.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\xerife_vinculo.cs">
+      <DependentUpon>Xerife.tt</DependentUpon>
+    </Compile>
     <Compile Include="Extensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -270,6 +933,23 @@
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="img\Thumbs.db" />
     <Content Include="Scripts\app\controller\funcionario.controller.js" />
+    <EntityDeploy Include="DB\Xerife.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Xerife.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DB\Xerife.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Xerife.edmx</DependentUpon>
+      <LastGenOutput>Xerife.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\Xerife.edmx.diagram">
+      <DependentUpon>Xerife.edmx</DependentUpon>
+    </Content>
+    <Content Include="DB\Xerife.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Xerife.edmx</DependentUpon>
+      <LastGenOutput>Xerife.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -611,14 +1291,11 @@
     <Content Include="Views\Requisicao\Ferias.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Xerife.Data\Xerife.Data.csproj">
-      <Project>{fdc65406-73f4-44c4-8921-962080f06713}</Project>
-      <Name>Xerife.Data</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -648,6 +1325,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1a5bd60778c447d68c07c34661fc0a11" Name="Diagram1">
+        <EntityTypeShape EntityType="Xerife.Model.xerife_acumulador_fiscal" Width="1.5" PointX="21.25" PointY="198" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_acumulador_guia" Width="1.5" PointX="15.25" PointY="195.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_acumulador_servico" Width="1.5" PointX="23.25" PointY="208.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_alocacao_tomador" Width="1.5" PointX="29.5" PointY="200.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_anexo_mensagem" Width="1.5" PointX="19.75" PointY="151.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_anotacao_funcionario" Width="1.5" PointX="29.5" PointY="186.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_anotacao_parceiro" Width="1.5" PointX="34.75" PointY="192.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_apuracao_imposto" Width="1.5" PointX="18.25" PointY="194.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_arquivo" Width="1.5" PointX="24" PointY="227.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_arquivo_bancario" Width="1.5" PointX="15.25" PointY="213.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_assunto_requisicao" Width="1.5" PointX="16" PointY="187.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_atestado" Width="1.5" PointX="29.5" PointY="189.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_auditoria" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_banco" Width="1.5" PointX="22" PointY="182.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_bloqueio_mensal" Width="1.5" PointX="15.25" PointY="217.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_calendario" Width="1.5" PointX="6" PointY="172.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_calendario_item" Width="1.5" PointX="8.25" PointY="199.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_campo_usuario" Width="1.5" PointX="11" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_cargo" Width="1.5" PointX="6" PointY="185.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_categoria" Width="1.5" PointX="6" PointY="199.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_categoria_financeira" Width="1.5" PointX="22" PointY="178.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_centro_custo" Width="1.5" PointX="3" PointY="180.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_ciap" Width="1.5" PointX="9.75" PointY="232.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_ciap_item" Width="1.5" PointX="12" PointY="233.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_classe_fiscal" Width="1.5" PointX="36.25" PointY="187.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_cnae" Width="1.5" PointX="10.75" PointY="179.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_codigo_fiscal" Width="1.5" PointX="38.5" PointY="186.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_conducao" Width="1.5" PointX="27.25" PointY="189.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_conducao_funcionario" Width="1.5" PointX="29.5" PointY="196.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_conducao_item" Width="1.5" PointX="29.5" PointY="176.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_configuracao" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_configuracao_folha" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_conta_bancaria" Width="1.5" PointX="24.25" PointY="195.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_conta_financeira" Width="1.5" PointX="24.25" PointY="203.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_contador" Width="1.5" PointX="10.75" PointY="156.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_contra_partida" Width="1.5" PointX="5.25" PointY="226.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_cookie" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_deducoes" Width="1.5" PointX="21.25" PointY="194.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_departamento" Width="1.5" PointX="3" PointY="189" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_dependente_funcionario" Width="1.5" PointX="35.5" PointY="199.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_detalhamento_fiscal" Width="1.5" PointX="3" PointY="192.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_documento" Width="1.5" PointX="26.25" PointY="221" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_documento_portal" Width="1.5" PointX="31.5" PointY="217.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_ecf" Width="1.5" PointX="3" PointY="195.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_empresa" Width="1.5" PointX="0.75" PointY="201.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_empresa_comercial" Width="1.5" PointX="3" PointY="198.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_empresa_contabil" Width="1.5" PointX="8.25" PointY="221" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_empresa_fiscal" Width="1.5" PointX="3" PointY="201.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_empresa_folha" Width="1.5" PointX="3" PointY="203.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_estoque" Width="1.5" PointX="15.25" PointY="234.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_estorno" Width="1.5" PointX="26.25" PointY="207.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_estorno_item" Width="1.5" PointX="28.5" PointY="217" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_evento" Width="1.5" PointX="3" PointY="166.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_evento_automatizado" Width="1.5" PointX="5.25" PointY="163.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_evento_departamento" Width="1.5" PointX="5.25" PointY="188.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_evento_filial" Width="1.5" PointX="26.25" PointY="211.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_evento_funcionario" Width="1.5" PointX="35.5" PointY="195.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_evento_parametro" Width="1.5" PointX="5.25" PointY="167.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_evento_programado" Width="1.5" PointX="10" PointY="165.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_evento_programado_item" Width="1.5" PointX="12.25" PointY="170.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_evento_sindicato" Width="1.5" PointX="23" PointY="222.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_evento_tomador" Width="1.5" PointX="29.25" PointY="207.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_evento_usuario" Width="1.5" PointX="5.25" PointY="132.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_exame_medico" Width="1.5" PointX="31.75" PointY="236" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_exposicao_fator_risco" Width="1.5" PointX="31.75" PointY="239.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_extrato" Width="1.5" PointX="23.5" PointY="214.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_falta" Width="1.5" PointX="29.5" PointY="203.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_favorito" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_ferias" Width="1.5" PointX="29.5" PointY="211.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_filial" Width="1.5" PointX="13" PointY="192.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_folha" Width="1.5" PointX="35.5" PointY="206.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_folha_plano_saude_dependente" Width="1.5" PointX="37.75" PointY="197.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_folha_plano_saude_funcionario" Width="1.5" PointX="32.5" PointY="208.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_forma_pagamento" Width="1.5" PointX="3" PointY="206.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_formula" Width="1.5" PointX="6.25" PointY="136.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_fpas" Width="1.5" PointX="10.75" PointY="190.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_funcionario" Width="1.5" PointX="27.25" PointY="199.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_funcionario_dados" Width="1.5" PointX="8.25" PointY="173.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_funcionario_inativo" Width="1.5" PointX="29.5" PointY="225.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_funcionario_situacao" Width="1.5" PointX="32.5" PointY="212" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_gerador_id" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_gps" Width="1.5" PointX="10.75" PointY="193.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_grau_instrucao" Width="1.5" PointX="6" PointY="153.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_historico_contabil" Width="1.5" PointX="3" PointY="234.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_horario" Width="1.5" PointX="6" PointY="150.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_horario_item" Width="1.5" PointX="8.25" PointY="132.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_imposto" Width="1.5" PointX="6.25" PointY="140.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_incidencia" Width="1.5" PointX="5.25" PointY="127.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_incidencia_opcoes" Width="1.5" PointX="5.25" PointY="238.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_indice" Width="1.5" PointX="8.5" PointY="248.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_indice_item" Width="1.5" PointX="10.75" PointY="255.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_infaz" Width="1.5" PointX="10.75" PointY="186.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_integracao" Width="1.5" PointX="8.25" PointY="227.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_integracao_fiscal" Width="1.5" PointX="10.5" PointY="226.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_integracao_generica" Width="1.5" PointX="10.5" PointY="224" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_item_cofins" Width="1.5" PointX="16.5" PointY="183.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_item_ecf" Width="1.5" PointX="5.25" PointY="195.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_item_fiscal" Width="1.5" PointX="10.75" PointY="197.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_item_icms" Width="1.5" PointX="16.5" PointY="172.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_item_ii" Width="1.5" PointX="16.5" PointY="179.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_item_ipi" Width="1.5" PointX="16.5" PointY="226.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_item_issqn" Width="1.5" PointX="16.5" PointY="231" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_item_lancamento_servico" Width="1.5" PointX="10.5" PointY="219.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_item_parcela" Width="1.5" PointX="15.5" PointY="209.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_item_pis" Width="1.5" PointX="16.5" PointY="238.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_item_produto" Width="1.5" PointX="18.75" PointY="199" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_item_regime_tributario" Width="1.5" PointX="8.5" PointY="141" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_item_transporte" Width="1.5" PointX="40.75" PointY="196.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_lancamento_contabil" Width="1.5" PointX="17.75" PointY="212.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_lancamento_fiscal" Width="1.5" PointX="7.5" PointY="203.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_lancamento_importado" Width="1.5" PointX="3" PointY="238" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_lancamento_servico" Width="1.5" PointX="5.25" PointY="205.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_livro_fiscal" Width="1.5" PointX="25" PointY="181.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_livro_fiscal_item" Width="1.5" PointX="27.25" PointY="193.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_lote_contabil" Width="1.5" PointX="3" PointY="242.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_mapa_tributario" Width="1.5" PointX="8.5" PointY="153.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_mapeamento_tabela" Width="1.5" PointX="15.25" PointY="191.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_mensagem" Width="1.5" PointX="17.5" PointY="151.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_modelo_nota_fiscal" Width="1.5" PointX="5.25" PointY="234.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_moeda" Width="1.5" PointX="10.75" PointY="175.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_movimentacao_requisicao" Width="1.5" PointX="20.5" PointY="186.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_movimentacao_sefip" Width="1.5" PointX="30.25" PointY="228.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_municipio" Width="1.5" PointX="8.5" PointY="156.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_nacionalidade" Width="1.5" PointX="6" PointY="219.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_natureza_juridica" Width="1.5" PointX="10.75" PointY="183.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_nota_ct" Width="1.5" PointX="12.75" PointY="218.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_ocorrencia" Width="1.5" PointX="6" PointY="222.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_outras_receitas" Width="1.5" PointX="15.25" PointY="296.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_outras_receitas_item" Width="1.5" PointX="17.5" PointY="296.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_parceiro" Width="1.5" PointX="32.5" PointY="196" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_parceiro_desconto" Width="1.5" PointX="34.75" PointY="214.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_parcela_servico" Width="1.5" PointX="21.5" PointY="204.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_pasta_mensagem" Width="1.5" PointX="15.25" PointY="151.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_patrimonio" Width="1.5" PointX="7.5" PointY="168.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_permissao" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_permissao_filial" Width="1.5" PointX="15.25" PointY="198.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_permissao_regra" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_piso_salarial" Width="1.5" PointX="13" PointY="222.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_plano_centro_custo" Width="1.5" PointX="5.25" PointY="181" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_plano_conta" Width="1.5" PointX="3" PointY="245.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_plano_filial" Width="1.5" PointX="15.25" PointY="222" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_plano_saude" Width="1.5" PointX="22" PointY="174.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_plano_saude_dependente" Width="1.5" PointX="37.75" PointY="205.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_plano_saude_filial" Width="1.5" PointX="24.25" PointY="191.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_plano_saude_funcionario" Width="1.5" PointX="32.5" PointY="192.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_ppp" Width="1.5" PointX="29.5" PointY="240.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_produto" Width="1.5" PointX="3" PointY="210.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_profissiografia" Width="1.5" PointX="31.75" PointY="243.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_protocolo" Width="1.5" PointX="26.25" PointY="215.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_rateio_financeiro" Width="1.5" PointX="5.25" PointY="177.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_recolhimento_sefip" Width="1.5" PointX="10.75" PointY="173.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_refeicao_funcionario" Width="1.5" PointX="38.5" PointY="201.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_regime_tributario" Width="1.5" PointX="30.25" PointY="192.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_regra" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_regra_acesso" Width="1.5" PointX="10.75" PointY="151.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_regra_acesso_item" Width="1.5" PointX="13" PointY="145.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_requisicao" Width="1.5" PointX="18.25" PointY="188.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_rescisao" Width="1.5" PointX="29.5" PointY="253.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_responsavel_registro_ppp" Width="1.5" PointX="31.75" PointY="246.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_retencao" Width="1.5" PointX="20.75" PointY="209.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_saldo_anterior_produto" Width="1.5" PointX="17.5" PointY="222.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_saldo_centro_custo" Width="1.5" PointX="7.5" PointY="163.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_saldo_patrimonio" Width="1.5" PointX="9.75" PointY="168.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_saldo_produto" Width="1.5" PointX="20.5" PointY="223.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_schema" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_sindicato" Width="1.5" PointX="10.75" PointY="245.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_sindicato_parametro" Width="1.5" PointX="13" PointY="256.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_sip" Width="1.5" PointX="25" PointY="185" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_situacao_fiscal" Width="1.5" PointX="15.25" PointY="319.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_situacao_folha" Width="1.5" PointX="29.5" PointY="258.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_sped_c420" Width="1.5" PointX="9.75" PointY="237" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_sped_c460" Width="1.5" PointX="9.75" PointY="240.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_sped_c470" Width="1.5" PointX="13" PointY="226.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_sped_c490" Width="1.5" PointX="20.75" PointY="213.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_tabela" Width="1.5" PointX="6.25" PointY="146.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_tabela_campo" Width="1.5" PointX="8.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_tabela_item" Width="1.5" PointX="8.5" PointY="146.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_tabela_servico" Width="1.5" PointX="14.25" PointY="231.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_tipo_contrato" Width="1.5" PointX="30.25" PointY="183.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_tipo_documento" Width="1.5" PointX="24" PointY="219.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_tipo_evento" Width="1.5" PointX="0.75" PointY="170.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_tipo_extrato" Width="1.5" PointX="21.25" PointY="227.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_tipo_parceiro" Width="1.5" PointX="30.25" PointY="180.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_titulo" Width="1.5" PointX="10.25" PointY="204.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_titulo_tag" Width="1.5" PointX="20.5" PointY="218.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_tomador" Width="1.5" PointX="16" PointY="202" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_tomador_mensal" Width="1.5" PointX="18.25" PointY="207.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_total_contabil" Width="1.5" PointX="3" PointY="273" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_total_contabil_usuario" Width="1.5" PointX="3" PointY="276.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_uf" Width="1.5" PointX="6.25" PointY="157.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_unidade" Width="1.5" PointX="0.75" PointY="214.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_usuario" Width="1.5" PointX="13" PointY="149.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_usuario_regra" Width="1.5" PointX="15.25" PointY="79.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_vale_refeicao" Width="1.5" PointX="19" PointY="183.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_vale_valor" Width="1.5" PointX="21.25" PointY="190.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_variavel" Width="1.5" PointX="0.75" PointY="173.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_variavel_valor" Width="1.5" PointX="3" PointY="163.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Xerife.Model.xerife_vinculo" Width="1.5" PointX="6" PointY="231" IsExpanded="true" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_codigo_fiscal_to_acumulador_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_acumulador_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_imposto_to_acumulador_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_uf_to_acumulador_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_acumulador_guia" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_acumulador_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_imposto_to_acumulador_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tabela_servico_to_acumulador_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_uf_to_acumulador_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_xerife_alocacao_tomador" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tomador_to_xerife_alocacao_tomador" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_mensagem_to_anexo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_anotacao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_parceiro_to_anotacao_parceiro" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_imposto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_imposto_to_apuracao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_arquivo_to_documento" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_arquivo_bancario_to_extrato" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_arquivo_bancario_to_titulo_remessa" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_arquivo_bancario_to_titulo_retorno" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_arquivo_bancario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_assunto_requisicao_to_xerife_requisicao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_atestado" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_banco_to_conta_bancaria" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_banco_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_banco_to_funcionario_dados1" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_banco_to_titulo_cheque" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_bloqueio_mensal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_calendario_funcionario_conducao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_calendario_funcionario_refeicao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_calendario_to_calendario_item" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_calendario_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_calendario_to_funcionario_dsr" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tabela_campo_to_campo_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_cargo_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_cargo_to_piso_salarial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_categoria_to_xerife_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_categoria_financeira_to_conta_financeira" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_categoria_financeira_to_tag" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_centro_custo_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_centro_custo_to_lancamento_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_centro_custo_to_lancamento_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_centro_custo_to_plano_centro_custo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_centro_custo_to_rateio_financeiro" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_centro_custo_to_titulo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_centro_custo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_ciap_to_item" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_fiscal_to_ciap" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_classe_fiscal_to_codigo_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_cnae_produto_to_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_cnae_servico_to_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_cnae_to_lancamento_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_codigo_fiscal_to_item_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_codigo_fiscal_to_item_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_codigo_fiscal_to_item_transporte" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_codigo_fiscal_to_mapeamento_tabela" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_codigo_fiscal_to_sped_c470" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_codigo_fiscal_to_sped_c490" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_conducao_to_conducao_funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_conducao_to_conducao_item" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_conducao_funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_regra_to_configuracao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_conta_bancaria_to_extrato" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_conta_bancaria_to_parceiro" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_conta_bancaria_to_titulo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_conta_bancaria" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_moeda_to_conta_bancaria" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_conta_financeira_to_rateio_financeiro" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_conta_financeira_to_titulo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_conta_financeira" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_contador_to_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_municipio_to_contador" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_contra_partida" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_historico_to_contra_partida" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_contra_partida1" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_contra_partida2" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_deducoes" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_imposto_to_deducoes" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_departamento_to_evento_departamento" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_departamento_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_departamento" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_dependente_funcionario_to_folha_plano_saude_dependente" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_dependente_funcionario_to_plano_saude" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_dependente_funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_grau_instrucao_to_dependente_funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_municipio_to_dependente_funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_detalhamento_fiscal_item_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_detalhamento_fiscal_to_item_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_detalhamento_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tipo_documento_to_documento" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_protocolo_to_documento_portal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tipo_documento_to_portal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_ecf_to_item_ecf" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_ecf" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_forma_pagamento" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_historico_contabil" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_integracao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_lancamento_importado" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_lote_contabil" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_parceiro" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_plano_conta" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_tomador" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_total_contabil_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_xerife_empresa_comercial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_xerife_empresa_contabil" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_xerife_empresa_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_xerife_empresa_folha" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_empresa_to_xerife_total_contabil" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_contabil" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_contabil1" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_contabil2" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_contabil3" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_contabil4" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_contabil5" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_estoque_to_lancamento_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_estoque_to_saldo_anterior_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_estoque_to_saldo_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_estoque" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_estorno_to_item" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_estorno" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_imposto_to_estorno" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_to_evento" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_to_evento_automatizado" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_to_evento_departamento" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_to_evento_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_to_evento_funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_to_evento_programado_item" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_to_evento_sindicato" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_to_evento_tomador" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_to_folha" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_to_incidencia" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_to_incidencia_opcoes" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_to_incidencia1" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_to_parametro" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_to_xerife_evento" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_formula_to_evento" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tabela_to_evento" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tipo_evento_to_evento" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_variavel_to_evento" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_evento_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_evento_funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_evento_programado_to_evento_programado_item" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_sindicato_to_evento_sindicato" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tomador_to_evento_tomador" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_ppp_to_xerife_exame_medico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_ppp_to_xerife_exposicao_fator_risco" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_extrato_to_titulo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tipo_extrato_to_extrato" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_falta" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_ferias" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_filial_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_titulo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_funcionario_situacao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_lancamento_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_lancamento_fiscal2" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_lancamento_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_livro_fiscal_item" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_mapeamento_tabela" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_outras_receitas" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_permissao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_plano_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_plano_saude_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_protocolo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_situacao_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_vale_valor" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_fpas_to_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_gps_to_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_infaz_to_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_moeda_to_filialaprazo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_moeda_to_filialavista" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_municipio_to_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_natureza_juridica_to_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_parceiro_to_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_recolhimento_sefip_to_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_regime_tributario_to_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_sindicato_to_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_filial_to_xerife_requisicao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_folha" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_saude_to_plano_saude_dependente" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_folha_plano_saude" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_saude_to_folha_plano_saude_funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_forma_pagamento_to_titulo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_moeda_to_forma_pagamento" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_formula_to_item_regime_tributario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_inativo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_plano_saude" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_refeicao_funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_rescisao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_situacao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_situacao_folha" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_funcionario_to_xerife_ppp" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_sip_to_xerife_funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_grau_instrucao_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_horario_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_municipio_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_municipio_to_funcionario_dados1" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_municipio_to_funcionario_dados2" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_nacionalidade_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_ocorrencia_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_sindicato_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tomador_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_vinculo_to_funcionario_dados" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_movimentacao_sefip_to_funcionario_situacao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_gps_to_tomador" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_historico_contabil_to_integracao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_horario_to_horario_item" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_imposto_to_item_regime_tributario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_indice_to_indice_item" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_indice_to_sindicato" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_indice_to_sindicato1" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_indice_to_sindicato2" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_integracao_to_integracao_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_integracao_to_integracao_generica" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_integracao1" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_integracao2" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_item_cofins_to_item_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_item_ecf_to_lancamento_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_item_regime_tributario_to_item_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_fiscal_to_item_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tabela_to_item_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_item_icms_to_item_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_uf_to_item_icms" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_item_ii_to_item_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_item_ipi_item_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_item_issqn_to_item_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_municipio_to_item_issqn" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tabela_servico_to_item_issqn" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_item_regime_tributario_to_item_lancamento_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_servico_to_item_lancamento_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tabela_to_item_lancamento_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_fiscal_to_parcela" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_moeda_to_item_parcela_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_titulo_to_item_parcela" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_item_pis_item_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_fiscal_to_item_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_produto_to_item_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_item_regime_tributario_to_mapeamento_tabela" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_item_regime_tributario_to_retencao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_regime_tributario_to_item_regime_tributario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tabela_to_item_regime_tributario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_item_transporte_to_lancamento_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_municipio_to_item_transporte" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_parceiro_to_item_transporte" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_uf_to_item_transporte_placa" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_uf_to_item_transporte_placa_reboque" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_importado_to_lancamento_contabil" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lote_contabil_to_lancamento_contabil" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_patrimonio_to_lancamento_contabil" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_patrimonio_to_lancamento_contabil2" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_centro_custo_to_lancamento_contabil" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_centro_custo_to_lancamento_contabil2" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_lancamento_credito" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_lancamento_debito" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_fiscal_to_nota_ct" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_fiscal_to_retencao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_fiscal_to_sped_c420" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_fiscal_to_sped_c460" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_fiscal_to_sped_c490" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_importado_to_lancamento_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_modelo_nota_fiscal_to_lancamento_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_parceiro_to_lancamento_fiscal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_importado_to_lancamento_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_importado_to_titulo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_servico_retencao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_lancamento_servico_to_parcela_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_modelo_nota_fiscal_to_lancamento_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_parceiro_to_lancamento_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tabela_servico_to_lancamento_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_livro_fiscal_to_livro_fiscal_item" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_uf_to_mapa_tributario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_uf_to_mapa_tributario2" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tabela_to_mapeamento_tabela" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_pasta_mensagem_to_mensagem" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_modelo_nota_fiscal_to_nota_ct" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_moeda_to_parcela_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_requisicao_to_xerife_movimentacao_requisicao" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_municipio_to_parceiro" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_municipio_to_parceiro_cobranca" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_municipio_to_sindicato" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_municipio_to_tomador" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_uf_to_municipio" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_outras_receitas_to_item" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_parceiro_to_desconto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_parceiro_to_titulo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_parceiro_to_titulo_cheque" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_regime_tributario_to_parceiro" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tipo_contrato_to_parceiro" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tipo_parceiro_to_parceiro" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_titulo_to_parcela_servico" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_usuario_to_pasta_mensagem" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_patrimonio_to_saldo_patrimonio" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_centro_custo_to_patrimonio" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_permissao_to_regra" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_usuario_to_permissao_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_regra_to_permissao_regra" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_sindicato_to_piso_salarial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_centro_custo_to_saldo_centro_custo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_filial_to_plano_centro_custo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_conta_parente" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_plano_conta" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_conta_to_plano_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_saude_to_dependente" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_saude_to_funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_plano_saude_to_plano_saude_filial" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_ppp_to_xerife_profissiografia" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_ppp_to_xerife_responsavel_registro_ppp" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_produto_to_saldo_anterior_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_produto_to_saldo_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_produto_to_sped_c470" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_uf_to_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_unidade_to_produto" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_unidade_to_produto1" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tipo_documento_to_protocolo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_titulo_to_rateio_financeiro" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_vale_refeicao_to_refeicao_funcionario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_regime_tributario_to_tomador" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_regra_to_usuario_regra" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_regra_acesso_to_acesso_item" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_regra_acesso_to_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_sindicato_to_parametro" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_sped_c460_to_sped_c470" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tabela_to_tabela_item" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_titulo_to_tag" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_titulo_to_titulo" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_tomador_to_tomador_mensal" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_usuario_to_usuario_regra" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_vale_refeicao_to_vale_valor" ManuallyRouted="false" />
+        <AssociationConnector Association="Xerife.Model.fk_xerife_variavel_to_variavel_valor" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

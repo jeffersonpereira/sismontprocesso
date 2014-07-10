@@ -20,7 +20,7 @@ namespace SismontProcessos
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             GlobalConfiguration.Configuration.MessageHandlers.Add(new CorsHandler());
-            ConfigureApi(GlobalConfiguration.Configuration);
+            //ConfigureApi(GlobalConfiguration.Configuration);
         }
 
         void ConfigureApi(HttpConfiguration config)
