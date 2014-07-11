@@ -66,5 +66,17 @@ namespace SismontProcessos.DB
             }
             
         }
+
+        public bool IsAutenticate(string login, string cnpj,string senha,out xerife_usuario usuario)
+        {
+            var filial = this.xerife_filial.FirstOrDefault(x => x.cnpj_cei.Equals(cnpj));
+            if(filial!=null)
+            {
+                usuario = null;
+                return true;
+            }
+            usuario = null;
+            return false;
+        }
     }
 }

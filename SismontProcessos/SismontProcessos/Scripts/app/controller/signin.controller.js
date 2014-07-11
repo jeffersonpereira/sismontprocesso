@@ -1,35 +1,13 @@
-﻿var app = angular.module("loginApp",[]);
-
-var url = 'http://localhost:7213/';
-app.controller('loginController', function ($scope,userService) {
-    $scope.fail = false;
+﻿var app = angular.module("loginApp", ['ngResource']);
+app.controller('userController', function ($scope, $window, userFactory) {
+    $scope.user = { cnpj: '1', senha: '1', login: 'jefferson' };
     $scope.erro = '';
     $scope.signin = function () {
-        $scope.fail = !userService.signin($scope.user);
-        $scope.erro = 'Unidade não foi encontrada. Tente novamente ou entre em contato com o administrador.';
+        userFactory.post($scope.user).$promise.then(function () {
+            $scope.erro = '';
+            $window.location.href += "home";
+        }, function () {
+            $scope.erro = 'Não foi possível efetuar o login. Verifique os dados informados e tente novamente.';
+        });
     };
-
-    $scope.abandon = function () {
-        $http.post(url + 'api/login/abandosession')
-    };
-});
-
-
-app.controller('userController', function ($scope, userService) {
-
-    $scope.updateSenha = function (callback) {
-        userService.updatePassword($scope.senha, callback);
-    };
-
-    //$scope.abandon = function () {
-    //    $http.post(url + 'api/login/abandosession')
-    //};
-    $scope.user = null;
-    userService.getUser(function (data) {
-        $scope.user = data;
-    });
-});
-
-app.config(function ($httpProvider) {
-    $httpProvider.interceptors.push('AuthInterceptor');
 });

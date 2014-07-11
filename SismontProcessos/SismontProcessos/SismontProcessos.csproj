@@ -219,6 +219,8 @@
     <Compile Include="Controllers\DocumentoController.cs" />
     <Compile Include="Controllers\DocumentoValueController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LoginValueController.cs" />
     <Compile Include="Controllers\MovimentacaoValueController.cs" />
     <Compile Include="Controllers\RequisicaoController.cs" />
     <Compile Include="Controllers\RequisicaoValueController.cs" />
@@ -912,6 +914,7 @@
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\controller\movimentacao.controller.js" />
     <Content Include="Scripts\app\controller\requisicao.controller.js" />
     <Content Include="Scripts\app\controller\signin.controller.js" />
@@ -1291,7 +1294,7 @@
     <Content Include="Views\Requisicao\Funcionario.cshtml" />
     <Content Include="Views\Requisicao\DependenteTemplate.cshtml" />
     <Content Include="Views\Requisicao\Ferias.cshtml" />
-    <Content Include="Views\Home\Signin.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -64,7 +64,7 @@ appModule.controller('funcionarioController', function ($scope, $http, $window, 
         $scope.funcionario.data = new Date();
         $scope.funcionario.tipo_requisicao = 'funcionario';
         requisicaoFactory.save($scope.funcionario).$promise.then(function () {
-            $window.location.href = "http://localhost:1328/Requisicao";
+            $window.location.href += "Requisicao";
         });
 
     };

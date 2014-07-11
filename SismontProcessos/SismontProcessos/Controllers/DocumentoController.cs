@@ -8,6 +8,7 @@ using SismontProcessos.DB;
 
 namespace SismontProcessos.Controllers
 {
+    [Authorize]
     public class DocumentoController : ValuesController
     {
         [HttpGet]

@@ -13,10 +13,5 @@ namespace SismontProcessos.Controllers
         {
             return View();
         }
-
-        public ActionResult Signin()
-        {
-            return View();
-        }
     }
 }
