@@ -5,21 +5,41 @@
 }
 
 <div ng-app="feriasApp">
-    <div ng-app="feriasConbtroller">
-        <form>
+    <div ng-controller="feriasController">
+        <form ng-submit="add()">
             @Html.Partial("RequisicaoTemplate")
             <div class="row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label class="control-label">Colaborador</label>
-                    <select ng-options="funcionario.nome for funcionario in funcionarios" ng-model="funcionario" class="form-control"></select>
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="funcionario.nome" readonly/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" ng-click="open()">Selecionar</button>
+                        </span>
+                    </div>
                 </div>
                 <div class="form-group col-md-3">
-                    <label class="control-label">Ínicio do Gozo</label>
-                    <input type="text" class="form-control" ng-model="ferias.inicio_gozo" data-provide="datepicker" data-date-format="dd/mm/yyyy" />
+                    <label class="control-label">Inicio do Gozo</label>
+                    @*<input type="text" class="form-control datepicker" ng-model="ferias.inicio_gozo" data-provide="datepicker" data-date-format="dd/mm/yyyy" />*@
+                    <div class="input-group">
+                        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="ferias.inicio_gozo" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
                 </div>
                 <div class="form-group col-md-3">
                     <label class="control-label">Fim do Gozo</label>
-                    <input type="text" class="form-control" ng-model="ferias.inicio_fim" data-provide="datepicker" data-date-format="dd/mm/yyyy" />
+                    <div class="input-group">
+                        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="ferias.fim_gozo" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <label class="control-label">Dias Abono</label>
+                    <input type="number" class="form-control" ng-model="ferias.dias_abono" />
                 </div>
             </div>
             <div class="row">
@@ -27,10 +47,34 @@
                     <label class="control-label">Observação</label>
                     <textarea class="form-control" ng-model="ferias.observacao"></textarea>
                 </div>
+                
             </div>
             <button class="btn btn-primary" type="submit">Salvar</button>
             <button class="btn btn-default" type="reset">Limpar</button>
         </form>
+
+        <script type="text/ng-template" id="funcionario.html">
+            <div class="modal-header">
+                <h3 class="modal-title">Funcionário</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <input type="search" class="form-control" placeholder="Pesquisar..." ng-model="search" />
+                </div>
+                <div class="row">
+                    <div class="gridStyle" ng-grid="gridFuncionario"></div>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="ok()">Salvar</button>
+                <button class="btn btn-default" ng-click="cancel()">Cancelar</button>
+            </div>
+        </script>
     </div>
 </div>
+@Scripts.Render("~/scripts/app/controller/ferias.controller.js")
+@Scripts.Render("~/scripts/app/factory/funcionario.factory.js")
+@Scripts.Render("~/scripts/app/factory/requisicao.factory.js")
+@Scripts.Render("~/scripts/app/factory/assunto.factory.js")
 

@@ -33,14 +33,14 @@ namespace SismontProcessos.Models
             requisisao.tipo = Convert.ToInt32(value.tipo);
             requisisao.data = DateTime.Today;
             requisisao.xml = ferias.ObjectToByteArray();
+            requisisao.filial_id = GlobalVars.FilialId;
             return requisisao;
         }
 
         public DateTime inicio_gozo { get; set; }
         public DateTime fim_gozo { get; set; }
         public bool abono { get; set; }
-        public DateTime? inicio_abono { get; set; }
-        public DateTime? fim_abono { get; set; }
+        public int dias_abono { get; set; }
         public int funcionario_id { get; set; }
     }
 }

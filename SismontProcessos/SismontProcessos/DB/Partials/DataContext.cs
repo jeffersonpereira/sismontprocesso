@@ -67,16 +67,55 @@ namespace SismontProcessos.DB
             
         }
 
-        public bool IsAutenticate(string login, string cnpj,string senha,out xerife_usuario usuario)
+        public xerife_usuario UsuarioAtual
         {
-            var filial = this.xerife_filial.FirstOrDefault(x => x.cnpj_cei.Equals(cnpj));
+            get { return this.xerife_usuario.FirstOrDefault(x => x.usuario_id == GlobalVars.UsuarioId); }
+        }
+
+        public xerife_filial FilialAtual
+        {
+            get { return this.xerife_filial.FirstOrDefault(x => x.filial_id == GlobalVars.FilialId); }
+        }
+
+        public bool IsAutenticate(string login, string cnpj, string senha, out xerife_usuario usuario, out xerife_filial filial)
+        {
+            filial = this.xerife_filial.FirstOrDefault(x => x.cnpj_cei.Equals(cnpj));
+            bool liberado = false;
+            var user = GetUsuario(login);
             if(filial!=null)
             {
-                usuario = null;
-                return true;
+                if (user != null)
+                {
+                    if (IsAcessoFilial(user, filial))
+                    {
+                        senha = Security.SecurityProvider.HashPassword(senha, user.salt);
+                        liberado = senha.Equals(user.senha);
+                    }
+                }
             }
-            usuario = null;
-            return false;
+            usuario = liberado ? user : null;
+            return liberado;
+        }
+
+        private xerife_usuario GetUsuario(string login)
+        {
+            return this.xerife_usuario.FirstOrDefault(x => x.login.ToLower().Equals(login.ToLower()));
+        }
+
+        private bool IsAcessoFilial(xerife_usuario usuario,xerife_filial filial)
+        {
+            return this.xerife_permissao_filial.Any(x => x.usuario_id == usuario.usuario_id && x.xerife_filial.filial_id == filial.filial_id);
+        }
+
+        public IQueryable GetFuncionarioDados()
+        {
+            var funcionarios = (from x in this.xerife_funcionario_dados.Include("xerife_funcionario")
+                                where x.xerife_funcionario.filial_id == GlobalVars.FilialId &&
+                                x.exercicio <= DateTime.Today &&
+                                !x.xerife_funcionario.xerife_funcionario_situacao.Any(y=>y.codigo_afastamento==8 && y.afastamento<=DateTime.Today)
+                                orderby x.nome ascending
+                                select new { x.nome,x.funcionario_id,x.xerife_funcionario.matricula }).Distinct().AsQueryable();
+            return funcionarios;
         }
     }
 }

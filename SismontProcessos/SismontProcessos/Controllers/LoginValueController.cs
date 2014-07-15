@@ -15,7 +15,7 @@ namespace SismontProcessos.Controllers
         [HttpGet]
         public string GetLogin()
         {
-            return "Jefferson";
+            return string.Empty;
         }
 
         [HttpPost]
@@ -27,13 +27,13 @@ namespace SismontProcessos.Controllers
                 string cnpj = user["cnpj"];
                 string senha = user["senha"];
                 xerife_usuario usuario = null;
-                if (_context.Context.IsAutenticate(login, cnpj, senha, out usuario))
+                xerife_filial filial = null;
+                if (_context.Context.IsAutenticate(login, cnpj, senha, out usuario,out filial))
                 {
                     var response = this.Request.CreateResponse(HttpStatusCode.Created, true);
                     FormsAuthentication.SetAuthCookie(login, false);
-                    //HttpContext.Current.Session.Add("bloco", user.Bloco);
-                    //HttpContext.Current.Session.Add("unidade", unidade.unidade_id);
-                    //HttpContext.Current.Session.Add("condominio", unidade.condominio_id);
+                    HttpContext.Current.Session.Add("usuarioId", usuario.usuario_id);
+                    HttpContext.Current.Session.Add("filialId", filial.filial_id);
                     return response;
                 }
                 return this.Request.CreateErrorResponse(HttpStatusCode.Forbidden, "Unidade não encontrada");

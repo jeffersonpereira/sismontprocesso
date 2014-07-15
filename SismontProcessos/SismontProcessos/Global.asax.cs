@@ -30,17 +30,10 @@ namespace SismontProcessos
             // Remove the XML formatter
             config.Formatters.Remove(config.Formatters.XmlFormatter);
         }
-
-        public override void Init()
+        /*Necessário para que se possa ter acesso ao session no web api*/
+        protected void Application_PostAuthorizeRequest()
         {
-            this.PostAuthenticateRequest += MvcApplication_PostAuthenticateRequest;
-            base.Init();
-        }
-
-        void MvcApplication_PostAuthenticateRequest(object sender, EventArgs e)
-        {
-            System.Web.HttpContext.Current.SetSessionStateBehavior(
-                SessionStateBehavior.Required);
+            System.Web.HttpContext.Current.SetSessionStateBehavior(System.Web.SessionState.SessionStateBehavior.Required);
         }
     }
 }

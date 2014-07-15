@@ -2,7 +2,7 @@
 
 
 appModule.controller('funcionarioController', function ($scope, $http, $window, $modal, requisicaoFactory, assuntoFactory) {
-
+    
     assuntoFactory.query(function (data) {
         $scope.assuntos = data;
     })
@@ -66,7 +66,6 @@ appModule.controller('funcionarioController', function ($scope, $http, $window, 
         requisicaoFactory.save($scope.funcionario).$promise.then(function () {
             $window.location.href += "Requisicao";
         });
-
     };
 
     this.columns =

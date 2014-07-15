@@ -16,7 +16,9 @@ namespace SismontProcessos.Controllers
         [HttpGet]
         public IQueryable<xerife_requisicao> GetRequisicao()
         {
-            return Get<xerife_requisicao>();
+            var requisicoes = Get<xerife_requisicao>();
+            requisicoes = requisicoes.Where(x => x.filial_id == _context.Context.FilialAtual.filial_id);
+            return requisicoes;
         }
 
         [HttpGet]
@@ -58,6 +60,7 @@ namespace SismontProcessos.Controllers
                         if (requisicao != null)
                         {
                             DoPost<xerife_requisicao>(requisicao);
+                            requisicao.solicitante = _context.Context.UsuarioAtual.login;
                             if (_context.Context.SaveChanges() > 0)
                             {
                                 SendMail(requisicao);
