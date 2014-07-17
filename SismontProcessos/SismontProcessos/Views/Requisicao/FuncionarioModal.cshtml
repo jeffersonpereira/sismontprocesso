@@ -1,0 +1,18 @@
+﻿<script type="text/ng-template" id="funcionario.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Funcionário</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <input type="search" class="form-control" placeholder="Pesquisar..." ng-model="search" />
+        </div>
+        <div class="row">
+            <div class="gridStyle" ng-grid="gridFuncionario"></div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <input type="submit" class="btn btn-primary" ng-click="ok()" ng-disabled="form.$invalid" value="Salvar" />
+        <input type="reset" class="btn btn-default" ng-click="cancel()" value="Cancelar" />
+    </div>
+</script>

@@ -7,6 +7,7 @@ using SismontProcessos.DB;
 
 namespace SismontProcessos.Models
 {
+    [Serializable]
     public class FeriasModel
     {
         public static xerife_requisicao CreateObject(dynamic value)
@@ -31,9 +32,12 @@ namespace SismontProcessos.Models
             }
             var requisisao = new xerife_requisicao();
             requisisao.tipo = Convert.ToInt32(value.tipo);
+            requisisao.assunto_requisicao_id = Convert.ToInt32(value.assunto_requisicao_id);
             requisisao.data = DateTime.Today;
-            requisisao.xml = ferias.ObjectToByteArray();
+            requisisao.origem = 0;
+            requisisao.situacao = 0;
             requisisao.filial_id = GlobalVars.FilialId;
+            requisisao.xml = ferias.ObjectToByteArray();
             return requisisao;
         }
 

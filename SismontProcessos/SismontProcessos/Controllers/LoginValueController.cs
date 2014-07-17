@@ -34,6 +34,8 @@ namespace SismontProcessos.Controllers
                     FormsAuthentication.SetAuthCookie(login, false);
                     HttpContext.Current.Session.Add("usuarioId", usuario.usuario_id);
                     HttpContext.Current.Session.Add("filialId", filial.filial_id);
+                    HttpContext.Current.Session.Add("empresa", filial.xerife_empresa.razao_social);
+                    HttpContext.Current.Session.Add("cnpj", cnpj);
                     return response;
                 }
                 return this.Request.CreateErrorResponse(HttpStatusCode.Forbidden, "Unidade não encontrada");

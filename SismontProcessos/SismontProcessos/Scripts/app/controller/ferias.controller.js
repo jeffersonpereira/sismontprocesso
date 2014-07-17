@@ -14,7 +14,8 @@ appModule.controller('feriasController', function ($scope,$modal, requisicaoFact
         $scope.ferias.tipo = $scope.tipo;
         $scope.ferias.assunto_requisicao_id = $scope.assunto.assunto_requisicao_id;
         $scope.ferias.tipo_requisicao = 'ferias';
-        alert($scope.ferias.inicio_gozo);
+        $scope.ferias.inicio_gozo = dateFormat($scope.ferias.inicio_gozo);
+        $scope.ferias.fim_gozo = dateFormat($scope.ferias.fim_gozo);
         requisicaoFactory.save($scope.ferias).$promise.then(function () {
             $window.location.href += "Requisicao";
         });
@@ -23,7 +24,6 @@ appModule.controller('feriasController', function ($scope,$modal, requisicaoFact
     $scope.openCalendar = function ($event) {
         $event.preventDefault();
         $event.stopPropagation();
-
         $scope.opened = true;
     };
 
@@ -45,31 +45,3 @@ appModule.controller('feriasController', function ($scope,$modal, requisicaoFact
     }
 });
 
-
-var funcionarioController = function ($scope, $modalInstance,funcionarios) {
-    $scope.funcionarios = funcionarios;
-    this.columns =
-        [
-            { field: 'matricula', width: 120, displayName: 'Matricula' },
-            { field: 'nome', width: 250, displayName: 'Nome' }
-        ]
-
-    $scope.gridFuncionario = {
-        data: 'funcionarios | filter: search',
-        columnDefs: this.columns,
-        showFooter: true,
-        multiSelect: false,
-        i18n: 'pt-br',
-        beforeSelectionChange: function (row) {
-            $scope.funcionario = row.entity;
-        }
-    };
-
-    $scope.ok = function () {
-        $modalInstance.close($scope.funcionario);
-    };
-
-    $scope.cancel = function () {
-        $modalInstance.dismiss();
-    };
-};

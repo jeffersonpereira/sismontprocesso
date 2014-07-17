@@ -9,7 +9,7 @@ namespace SismontProcessos
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js", "~/Scripts/jquery.js", "~/Scripts/jquery.maskedinput-1.3.1.min.js"));
+                        "~/Scripts/jquery-{version}.js", "~/Scripts/jquery.js", "~/Scripts/jquery.mask.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -44,7 +44,11 @@ namespace SismontProcessos
                       "~/Scripts/bootstrap-datepicker.js",
                       "~/Scripts/locales/bootstrap-datepicker.pt-BR.js",
                       "~/Scripts/ui-bootstrap-tpls-0.11.0.min.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js", "~/Scripts/bootstrap-session-timeout.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular-ui").Include(
+                         "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js",
+                         "~/Scripts/angular-ui/ui-bootstrap.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

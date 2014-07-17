@@ -1,34 +1,42 @@
-﻿jQuery(function () {
-    $('#buscar-cep').click(function () {
-        $('#CEP').cep({
-            success: loadEndereco
-        });
-    });
-
-    $('#cep').focusout(function () {
-        $('#cep').cep({
-            success: loadEndereco
-        });
-    });
-
-    $('#uf').focusout(function () {
-        setMask();
-    });
-
-    function loadEndereco(data) {
-        $('#endereco').val(data.tipoLogradouro + ' ' + data.logradouro);
-        $('#bairro').val(data.bairro);
-        $('#uf').val(data.estado);
-        $('#municipio').val(data.cidade);
+﻿var dateFormat = function (date) {
+    ano = date.getFullYear();
+    mes = date.getMonth() + 1;
+    dia = date.getDate();
+    if (mes < 10) {
+        mes = "0" + mes;
     }
+    if (dia < 10) {
+        dia = "0" + dia;
+    }
+    alert(mes);
+    return dia + '/' + mes + '/' + ano;
+}
 
-    function setMask() {
-        var mask = "(99) 9999-9999";
-        var uf = $('#UF').val();
-        if (uf.toUpperCase() == "SP" || uf.toUpperCase() == "RJ" || uf.toUpperCase() == "ES") {
-            mask = "(99) 99999-9999";
+
+var funcionarioController = function ($scope, $modalInstance, funcionarios) {
+    $scope.funcionarios = funcionarios;
+    this.columns =
+        [
+            { field: 'matricula', width: 120, displayName: 'Matricula' },
+            { field: 'nome', width: 250, displayName: 'Nome' }
+        ]
+
+    $scope.gridFuncionario = {
+        data: 'funcionarios | filter: search',
+        columnDefs: this.columns,
+        showFooter: true,
+        multiSelect: false,
+        i18n: 'pt-br',
+        beforeSelectionChange: function (row) {
+            $scope.funcionario = row.entity;
         }
-        $("#Celular").mask(mask);
-        $("#Telefone").mask(mask);
-    }
-});
+    };
+
+    $scope.ok = function () {
+        $modalInstance.close($scope.funcionario);
+    };
+
+    $scope.cancel = function () {
+        $modalInstance.dismiss();
+    };
+};

@@ -28,8 +28,16 @@ namespace SismontProcessos
             {
                 throw new Exception(ex.Message);
             }
+        }
 
-
+        public static Object ByteArrayToObject(this byte[] arrBytes)
+        {
+            MemoryStream memStream = new MemoryStream();
+            BinaryFormatter binForm = new BinaryFormatter();
+            memStream.Write(arrBytes, 0, arrBytes.Length);
+            memStream.Seek(0, SeekOrigin.Begin);
+            Object obj = (Object)binForm.Deserialize(memStream);
+            return obj;
         }
 
         public static byte[] SerializeToXml<T>(this T value)

@@ -2,7 +2,6 @@
 
 
 appModule.controller('funcionarioController', function ($scope, $http, $window, $modal, requisicaoFactory, assuntoFactory) {
-    
     assuntoFactory.query(function (data) {
         $scope.assuntos = data;
     })

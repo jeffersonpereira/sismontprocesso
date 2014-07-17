@@ -13,7 +13,7 @@ namespace SismontProcessos.Controllers
 {
     public class RequisicaoValueController : ValuesController
     {
-        [HttpGet]
+        [Route("api/requisicao")]
         public IQueryable<xerife_requisicao> GetRequisicao()
         {
             var requisicoes = Get<xerife_requisicao>();
@@ -21,7 +21,7 @@ namespace SismontProcessos.Controllers
             return requisicoes;
         }
 
-        [HttpGet]
+        [Route("api/requisicao/{id:int}")]
         public IQueryable<xerife_requisicao> GetRequisicao(int id)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
@@ -29,14 +29,23 @@ namespace SismontProcessos.Controllers
             return Get<xerife_requisicao>(parameters);
         }
 
+        [HttpGet]
+        [Route("api/assunto/")]
+        public IQueryable<xerife_assunto_requisicao> GetAssunto()
+        {
+            return Get<xerife_assunto_requisicao>();
+        }
+
         [HttpPut]
+        [Route("api/requisicao")]
         public void Update([FromBody]xerife_requisicao requisicao)
         {
             var original = _context.Context.xerife_requisicao.FirstOrDefault(x => x.requisicao_id == requisicao.requisicao_id);
             DoUpdate<xerife_requisicao>(requisicao, original);
         }
 
-        [HttpPost,ActionName("save")]
+        [HttpPost]
+        [Route("api/requisicao")]
         public HttpResponseMessage AdicionarFuncionario([FromBody]dynamic value)
         {
             try
@@ -63,7 +72,7 @@ namespace SismontProcessos.Controllers
                             requisicao.solicitante = _context.Context.UsuarioAtual.login;
                             if (_context.Context.SaveChanges() > 0)
                             {
-                                SendMail(requisicao);
+                                //SendMail(requisicao);
                                 HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, requisicao);
                                 response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = requisicao.requisicao_id }));
                                 return response;

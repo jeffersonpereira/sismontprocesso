@@ -7,7 +7,14 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/angularjs")
+    @Scripts.Render("~/bundles/angular-ui")
 
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryplugin")
+    @Scripts.Render("~/scripts/ng-grid.min.js")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/tema")
 </head>
 <body>
     <header class="header">
@@ -18,7 +25,7 @@
                 <div class="header-logo"><img src="~/img/logo.svg"></div>
 
                 <div class="header-company">
-                    <strong>02.131.770/0001-07</strong><br>PARABÉNS VOCE SERA NOSSO PROXIMO CLIENTE&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsppmatriz<br>MAR/2014
+                    <strong>@Request.RequestContext.HttpContext.Session["cnpj"]</strong><br>@Request.RequestContext.HttpContext.Session["empresa"]<br>@DateTime.Today.ToString("dd/MM/yyyy")
                 </div>
             </div>
 
@@ -94,11 +101,6 @@
                     </li>
 
                     <li><a href="~/Requisicao"><i class="fa fa-dashboard fa-arrow-circle-down"></i> Requisição</a></li>
-
-                    <li><a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a></li>
-
-                    <li><a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a></li>
-
                     <li>
                         <a href="#"><i class="fa fa-files-o fa-fw"></i> Documentos<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -108,23 +110,7 @@
                             <li><a href="notifications.html">Folha</a></li>
                         </ul>
                     </li>
-
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a href="#">Second Level Item</a></li>
-                            <li><a href="#">Second Level Item</a></li>
-                            <li>
-                                <a href="#">Third Level <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li><a href="#">Third Level Item</a></li>
-                                    <li><a href="#">Third Level Item</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li><a href="forms.html"><i class="fa fa-wrench fa-fw"></i> Alterar Senha</a></li>
+                    <li><a href="forms.html"><i class="fa fa-wrench fa-refresh"></i> Alterar Senha</a></li>
                 </ul>
             </div>
         </nav>
@@ -133,18 +119,18 @@
             @RenderBody()
         </div>
     </section>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/jqueryplugin")
-    @Scripts.Render("~/scripts/ng-grid.min.js")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/tema")
-    @RenderSection("scripts", required: false)
     <script>
-        jQuery.noConflict();
-        $('.datepicker').datepicker({
-            language: "pt-BR"
+        jQuery.ready(function () {
+            $.sessionTimeout({
+                message: 'Sua sessão expirará em um minuto.',
+                keepAliveUrl: 'keep-alive.html',
+                logoutUrl: 'http://sismont.com',
+                redirUrl: 'locked.html',
+                warnAfter: 60000,
+                redirAfter: 120000
+            });
         });
     </script>
+@RenderSection("scripts", required: false)
 </body>
 </html>

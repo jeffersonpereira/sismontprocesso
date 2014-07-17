@@ -79,7 +79,7 @@ namespace SismontProcessos.DB
 
         public bool IsAutenticate(string login, string cnpj, string senha, out xerife_usuario usuario, out xerife_filial filial)
         {
-            filial = this.xerife_filial.FirstOrDefault(x => x.cnpj_cei.Equals(cnpj));
+            filial = this.xerife_filial.Include("xerife_empresa").FirstOrDefault(x => x.cnpj_cei.Equals(cnpj));
             bool liberado = false;
             var user = GetUsuario(login);
             if(filial!=null)

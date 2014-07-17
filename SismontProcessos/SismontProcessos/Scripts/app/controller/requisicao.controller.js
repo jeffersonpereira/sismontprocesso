@@ -2,7 +2,7 @@
 
 appModule.controller("requisicaoController", function ($scope, $modal, requisicaoFactory, movimentacaoFactory, documentoFactory) {
 
-    requisicaoFactory.query(function (data) {
+    requisicaoFactory.requisicoes(function (data) {
         $scope.requisicoes = data;
         
     });
@@ -34,12 +34,12 @@ appModule.controller("requisicaoController", function ($scope, $modal, requisica
     this.columns =
         [
             { field: 'requisicao_id', displayName: '', width: 20, cellTemplate: '<div ng-show="row.getProperty(\'isdetail\')"><i ng-class="{\'fa fa-stop\' : row.entity.solucao==\'0\',\'fa fa-arrow-right\' : row.entity.solucao==\'1\'}" ></i></div>' },
-            { field: 'data', displayName: 'Data da Requisição', width: 150 },
+            { field: 'data | date:dd/MM/yyyy', displayName: 'Data da Requisição', width: 150 },
             { field: 'descricao_tipo', displayName: 'Tipo', width: 150 },
             { field: 'assunto', displayName: 'Assunto', width: 150 },
             { field: 'solicitante', displayName: 'Solicitante', width: 150 },
             { field: 'prioridade_descricao', displayName: 'Prioridade', width: 150 },
-            { field: 'vencimento', displayName: 'Vencimento', width: 150 }
+            { field: 'vencimento | date:dd/MM/yyyy', displayName: 'Vencimento', width: 150 }
         ]
 
     $scope.showDetail = false;
