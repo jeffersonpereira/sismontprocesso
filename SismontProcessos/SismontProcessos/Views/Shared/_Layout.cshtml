@@ -15,6 +15,7 @@
     @Scripts.Render("~/scripts/ng-grid.min.js")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/tema")
+    
 </head>
 <body>
     <header class="header">
@@ -119,17 +120,58 @@
             @RenderBody()
         </div>
     </section>
-    <script>
-        jQuery.ready(function () {
-            $.sessionTimeout({
-                message: 'Sua sessão expirará em um minuto.',
-                keepAliveUrl: 'keep-alive.html',
-                logoutUrl: 'http://sismont.com',
-                redirUrl: 'locked.html',
-                warnAfter: 60000,
-                redirAfter: 120000
-            });
-        });
+    <!-- dialog window markup -->
+    <div id="dialog" title="Sua sessão está prestes a expirar!">
+        <p>
+            <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 50px 0;"></span>
+            Você será desconectado em <span id="dialog-countdown" style="font-weight:bold"></span> segundos.
+        </p>
+        <p>Deseja continuar logado?</p>
+    </div>
+
+    <script type="text/javascript">
+    // setup the dialog
+    //jQuery("#dialog").dialog({
+    //    autoOpen: false,
+    //    modal: true,
+    //    width: 400,
+    //    height: 200,
+    //    closeOnEscape: false,
+    //    draggable: false,
+    //    resizable: false,
+    //    buttons: {
+    //        'Sim, permanecer online': function () {
+    //            jQuery(this).dialog('close');
+    //        },
+    //        'Não, Logoff': function () {
+    //            // fire whatever the configured onTimeout callback is.
+    //            // using .call(this) keeps the default behavior of "this" being the warning
+    //            // element (the dialog in this case) inside the callback.
+    //            jQuery.idleTimeout.options.onTimeout.call(this);
+    //        }
+    //    }
+    //});
+
+    //// cache a reference to the countdown element so we don't have to query the DOM for it on each ping.
+    //var $countdown = $("#dialog-countdown");
+
+    //// start the idle timer plugin
+    //jQuery.idleTimeout('#dialog', 'div.ui-dialog-buttonpane button:first', {
+    //    idleAfter: 5,
+    //    pollingInterval: 2,
+    //    keepAliveURL: 'keepalive.php',
+    //    serverResponseEquals: 'OK',
+    //    onTimeout: function () {
+    //        window.location = "http://localhost:1328/";
+    //    },
+    //    onIdle: function () {
+    //        jQuery(this).dialog("open");
+    //    },
+    //    onCountdown: function (counter) {
+    //        $countdown.html(counter); // update the counter
+    //    }
+    //});
+
     </script>
 @RenderSection("scripts", required: false)
 </body>

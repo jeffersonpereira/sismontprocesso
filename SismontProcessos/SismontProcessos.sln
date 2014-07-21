@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SismontProcessos", "SismontProcessos\SismontProcessos.csproj", "{3759AFF5-437F-436D-A705-68C301F91C0D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xerife.Data", "..\Xerife.Data\Xerife.Data.csproj", "{FDC65406-73F4-44C4-8921-962080F06713}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4175E5F6-FB18-4EFD-B671-D1FDA215D7F6}"
 	ProjectSection(SolutionItems) = preProject
@@ -22,10 +20,6 @@ Global
 		{3759AFF5-437F-436D-A705-68C301F91C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3759AFF5-437F-436D-A705-68C301F91C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3759AFF5-437F-436D-A705-68C301F91C0D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FDC65406-73F4-44C4-8921-962080F06713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FDC65406-73F4-44C4-8921-962080F06713}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FDC65406-73F4-44C4-8921-962080F06713}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FDC65406-73F4-44C4-8921-962080F06713}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,13 +9,17 @@ namespace SismontProcessos
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js", "~/Scripts/jquery.js", "~/Scripts/jquery.mask.min.js"));
+                        "~/Scripts/jquery-{version}.js", "~/Scripts/jquery.js", 
+                        "~/Scripts/jquery.mask.min.js",
+                        "~/Scripts/jquery-ui.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryplugin").Include(
-                        "~/Scripts/jquery.metisMenu.js"));
+                        "~/Scripts/jquery.metisMenu.js",
+                        "~/Scripts/jquery.idletimeout.js",
+                        "~/Scripts/jquery.idletimer.js"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/tema").Include(
@@ -44,7 +48,7 @@ namespace SismontProcessos
                       "~/Scripts/bootstrap-datepicker.js",
                       "~/Scripts/locales/bootstrap-datepicker.pt-BR.js",
                       "~/Scripts/ui-bootstrap-tpls-0.11.0.min.js",
-                      "~/Scripts/respond.js", "~/Scripts/bootstrap-session-timeout.min.js"));
+                      "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular-ui").Include(
                          "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js",
@@ -59,7 +63,8 @@ namespace SismontProcessos
                       "~/Content/style-xs.css",
                       "~/Content/style-sm.css",
                       "~/Content/style-md.css",
-                      "~/Content/font-awesome.css"));
+                      "~/Content/font-awesome.css",
+                      "~/Content/jquery-ui.min.css"));
         }
     }
 }

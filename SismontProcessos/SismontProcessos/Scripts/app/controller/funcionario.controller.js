@@ -60,7 +60,6 @@ appModule.controller('funcionarioController', function ($scope, $http, $window, 
     $scope.add = function () {
         $scope.funcionario.tipo = $scope.tipo;
         $scope.funcionario.assunto_requisicao_id = $scope.assunto.assunto_requisicao_id;
-        $scope.funcionario.data = new Date();
         $scope.funcionario.tipo_requisicao = 'funcionario';
         requisicaoFactory.save($scope.funcionario).$promise.then(function () {
             $window.location.href += "Requisicao";
