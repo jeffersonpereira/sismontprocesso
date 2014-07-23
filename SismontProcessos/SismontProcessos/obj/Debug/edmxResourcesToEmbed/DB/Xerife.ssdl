@@ -2442,6 +2442,8 @@
     <Property Name="assunto_requisicao_id" Type="int" Nullable="false" />
     <Property Name="filial_id" Type="int" />
     <Property Name="xml" Type="image" />
+    <Property Name="recurso" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="tipo_requisicao" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="xerife_rescisao">
     <Key>
@@ -4477,6 +4479,18 @@
         <PropertyRef Name="filial_id" />
       </Principal>
       <Dependent Role="xerife_vale_valor">
+        <PropertyRef Name="filial_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_xerife_filial_to_xerife_requisicao">
+    <End Role="xerife_filial" Type="Self.xerife_filial" Multiplicity="0..1" />
+    <End Role="xerife_requisicao" Type="Self.xerife_requisicao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="xerife_filial">
+        <PropertyRef Name="filial_id" />
+      </Principal>
+      <Dependent Role="xerife_requisicao">
         <PropertyRef Name="filial_id" />
       </Dependent>
     </ReferentialConstraint>
@@ -7023,18 +7037,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk-xerife_filial_to_xerife_requisicao">
-    <End Role="xerife_filial" Type="Self.xerife_filial" Multiplicity="0..1" />
-    <End Role="xerife_requisicao" Type="Self.xerife_requisicao" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="xerife_filial">
-        <PropertyRef Name="filial_id" />
-      </Principal>
-      <Dependent Role="xerife_requisicao">
-        <PropertyRef Name="filial_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="XerifeModelStoreContainer">
     <EntitySet Name="xerife_acumulador_fiscal" EntityType="Self.xerife_acumulador_fiscal" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="xerife_acumulador_guia" EntityType="Self.xerife_acumulador_guia" Schema="dbo" store:Type="Tables" />
@@ -7717,6 +7719,10 @@
     <AssociationSet Name="fk_xerife_filial_to_vale_valor" Association="Self.fk_xerife_filial_to_vale_valor">
       <End Role="xerife_filial" EntitySet="xerife_filial" />
       <End Role="xerife_vale_valor" EntitySet="xerife_vale_valor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_xerife_filial_to_xerife_requisicao" Association="Self.fk_xerife_filial_to_xerife_requisicao">
+      <End Role="xerife_filial" EntitySet="xerife_filial" />
+      <End Role="xerife_requisicao" EntitySet="xerife_requisicao" />
     </AssociationSet>
     <AssociationSet Name="fk_xerife_forma_pagamento_to_titulo" Association="Self.fk_xerife_forma_pagamento_to_titulo">
       <End Role="xerife_forma_pagamento" EntitySet="xerife_forma_pagamento" />
@@ -8557,10 +8563,6 @@
     <AssociationSet Name="fk_xerife_vinculo_to_funcionario_dados" Association="Self.fk_xerife_vinculo_to_funcionario_dados">
       <End Role="xerife_vinculo" EntitySet="xerife_vinculo" />
       <End Role="xerife_funcionario_dados" EntitySet="xerife_funcionario_dados" />
-    </AssociationSet>
-    <AssociationSet Name="fk-xerife_filial_to_xerife_requisicao" Association="Self.fk-xerife_filial_to_xerife_requisicao">
-      <End Role="xerife_filial" EntitySet="xerife_filial" />
-      <End Role="xerife_requisicao" EntitySet="xerife_requisicao" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

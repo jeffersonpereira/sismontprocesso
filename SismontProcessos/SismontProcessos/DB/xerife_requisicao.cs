@@ -33,6 +33,8 @@ namespace SismontProcessos.DB
         public int assunto_requisicao_id { get; set; }
         public Nullable<int> filial_id { get; set; }
         public byte[] xml { get; set; }
+        public string recurso { get; set; }
+        public int tipo_requisicao { get; set; }
     
         public virtual xerife_assunto_requisicao xerife_assunto_requisicao { get; set; }
         public virtual xerife_filial xerife_filial { get; set; }

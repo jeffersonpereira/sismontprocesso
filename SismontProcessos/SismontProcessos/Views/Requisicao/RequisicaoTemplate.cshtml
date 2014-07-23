@@ -21,8 +21,23 @@
     </div>
 </div>   
 <div class="row">
-    <div class="form-group col-md-4">
-        <label for="tipo">Recurso</label>
-        <input type="text" class="form-control" ng-model="recurso" />
+    <div class="form-group col-md-12">
+        <label for="tipo">Recurso</label><br />
+        @*<input type="text" class="form-control" ng-model="recurso" />*@
+        <div class="tag-input-ctn">
+            <div data-ng-repeat="login in logins" class="input-tag">
+                {{login}}
+                <div class="delete-tag" data-ng-click="deleteTag($index)">&times;</div>
+            </div>
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="login" data-delete-tag="deleteTag()" list="logins">
+                <span class="input-group-btn">
+                    <a class="btn fa fa-check" ng-click="addTag($event)"></a>
+                </span>
+            </div>
+        </div>
     </div>
 </div>  
+<datalist id="logins">
+    <option ng-repeat="usuario in usuarios" value="{{usuario.login}}" label="{{usuario.nome}}">
+</datalist>

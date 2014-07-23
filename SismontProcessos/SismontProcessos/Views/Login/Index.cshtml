@@ -11,11 +11,13 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/angularjs")
+    @Scripts.Render("~/scripts/ng-grid.min.js")
+    @Scripts.Render("~/scripts/app/factory/api.factory.js")
     @Scripts.Render("~/scripts/app/controller/signin.controller.js")
-    @Scripts.Render("~/scripts/app/factory/user.factory.js")
+    
 </head>
 <body>
-    <div class="container" ng-app="loginApp">
+    <div class="container" ng-app="app">
         <div class="row" ng-controller="userController">
             <div class="col-sm-6 col-md-4 col-md-offset-4">
                 <div class="account-wall">

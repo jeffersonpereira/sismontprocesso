@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div ng-app="rescisaoApp">
+<div ng-app="app">
     <div ng-controller="rescisaoController">
         <form ng-submit="add()" name="form">
             @Html.Partial("RequisicaoTemplate")
@@ -57,8 +57,5 @@
 </script>
 
 @Scripts.Render("~/scripts/app/controller/rescisao.controller.js")
-@Scripts.Render("~/scripts/app/factory/funcionario.factory.js")
-@Scripts.Render("~/scripts/app/factory/requisicao.factory.js")
-@Scripts.Render("~/scripts/app/factory/assunto.factory.js")
 @Scripts.Render("~/scripts/app/funcoes.js")
 

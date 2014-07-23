@@ -36,7 +36,6 @@ namespace SismontProcessos
                 Include("~/Scripts/angular-sanitize.min.js").
                 Include("~/Scripts/angular-scenario.js").
                 Include("~/Scripts/angular-touch.min.js"));
-                        
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -48,6 +47,8 @@ namespace SismontProcessos
                       "~/Scripts/bootstrap-datepicker.js",
                       "~/Scripts/locales/bootstrap-datepicker.pt-BR.js",
                       "~/Scripts/ui-bootstrap-tpls-0.11.0.min.js",
+                      "~/Scripts/bootstrap.file-input.js",
+                      "~/Scripts/jasny-bootstrap.min.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular-ui").Include(
@@ -64,7 +65,8 @@ namespace SismontProcessos
                       "~/Content/style-sm.css",
                       "~/Content/style-md.css",
                       "~/Content/font-awesome.css",
-                      "~/Content/jquery-ui.min.css"));
+                      "~/Content/jquery-ui.min.css",
+                      "~/Content/jasny-bootstrap.min.css"));
         }
     }
 }

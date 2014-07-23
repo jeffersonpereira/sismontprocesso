@@ -1,5 +1,4 @@
-﻿var appModule = angular.module('rescisaoApp', ['ngResource', 'ngGrid', 'ui.bootstrap']);
-appModule.controller('rescisaoController', function ($scope, $modal, requisicaoFactory, funcionarioFactory, assuntoFactory) {
+﻿appModule.controller('rescisaoController', function ($scope, $modal, Api) {
     $scope.afastamentos =
         [
             { codigo: 10, descricao: 'Rescisão com justa causa por iniciativa do empregador' },
@@ -16,11 +15,11 @@ appModule.controller('rescisaoController', function ($scope, $modal, requisicaoF
             { codigo: 2, descricao: 'Trabalhado' }
         ];
 
-    funcionarioFactory.query(function (data) {
+    Api.Funcionario.query(function (data) {
         $scope.funcionarios = data;
     });
 
-    assuntoFactory.query(function (data) {
+    Api.Assunto.query(function (data) {
         $scope.assuntos = data;
     });
 
@@ -46,7 +45,7 @@ appModule.controller('rescisaoController', function ($scope, $modal, requisicaoF
         $scope.rescisao.tipo = $scope.tipo;
         $scope.rescisao.assunto_requisicao_id = $scope.assunto.assunto_requisicao_id;
         $scope.rescisao.data_afastamento = dateFormat($scope.rescisao.data_afastamento);
-        requisicaoFactory.save($scope.rescisao).$promise.then(function () {
+        Api.Requisicao.save($scope.rescisao).$promise.then(function () {
             $window.location.href += "Requisicao";
         });
     };

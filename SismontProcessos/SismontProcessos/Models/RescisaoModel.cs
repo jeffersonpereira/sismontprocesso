@@ -38,6 +38,15 @@ namespace SismontProcessos.Models
             requisisao.situacao = 0;
             requisisao.filial_id = GlobalVars.FilialId;
             requisisao.xml = rescisao.ObjectToByteArray();
+            if (value.recursos != null)
+            {
+                foreach (var recurso in value.recursos)
+                {
+                    requisisao.recurso += recurso + ";";
+                }
+                requisisao.recurso = requisisao.recurso.TrimEnd(';');
+            }
+            requisisao.tipo_requisicao = (int)TipoRequisicao.Rescisao;
             return requisisao;
         }
 

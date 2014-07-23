@@ -14,7 +14,7 @@ namespace SismontProcessos.Controllers
             return View();
         }
 
-        public ActionResult Edit()
+        public ActionResult Edicao()
         {
             return View();
         }

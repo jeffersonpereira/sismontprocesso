@@ -13,9 +13,10 @@ namespace SismontProcessos.Controllers
     public class LoginValueController : ValuesController
     {
         [HttpGet]
-        public string GetLogin()
+        [Authorize]
+        public IQueryable GetLogin()
         {
-            return string.Empty;
+            return Get<xerife_usuario>();
         }
 
         [HttpPost]

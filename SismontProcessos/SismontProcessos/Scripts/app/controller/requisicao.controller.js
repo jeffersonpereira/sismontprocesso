@@ -1,33 +1,29 @@
-﻿var appModule = angular.module('app', ['ngResource', 'ngGrid', 'ui.bootstrap']);
+﻿appModule.controller("requisicaoController", function ($scope, $modal,Api) {
 
-appModule.controller("requisicaoController", function ($scope, $modal, requisicaoFactory, movimentacaoFactory, documentoFactory) {
-
-    requisicaoFactory.requisicoes(function (data) {
+    Api.Requisicao.query(function (data) {
         $scope.requisicoes = data;
         
     });
 
     $scope.isdetail = false;
     $scope.getRequisicao = function (id,callback) {
-        requisicaoFactory.query({ id: id }, function (data) {
+            Api.Requisicao.query({ id: id }, function (data) {
             $scope.requisicao = data;
         });
     };
 
-    $scope.getMovimentacao = function (id, callback) {
-        movimentacaoFactory.query({ id: id }, function (data) {
-            $scope.movimentacoes = data;
-        });
-    };
-
     $scope.getDocumento = function (id, callback) {
-        documentoFactory.query({ id: id }, function (data) {
+        Api.Documento.query({ id: id }, function (data) {
             $scope.documentos = data;
         });
     };
 
     $scope.update = function () {
-        requisicaoFactory.update({ id: $scope.requisicao.requisicao_id }, $scope.requisicao);
+        Api.Requisicao.update({ id: $scope.requisicao.requisicao_id }, $scope.requisicao);
+    };
+
+    $scope.edit = function () {
+        $scope.isvisible = false;
     };
 
     /*Requisições*/
@@ -43,6 +39,7 @@ appModule.controller("requisicaoController", function ($scope, $modal, requisica
         ]
 
     $scope.showDetail = false;
+    $scope.isvisible = false;
     $scope.gridRequisicao = {
         data: 'requisicoes| filter: search',
         columnDefs: this.columns,
@@ -52,18 +49,46 @@ appModule.controller("requisicaoController", function ($scope, $modal, requisica
         multiSelect: false,
         beforeSelectionChange: function (row) {
             $scope.showDetail = row.entity.isdetail;
+            $scope.requisicao = row.entity;
             $scope.getMovimentacao(row.entity.requisicao_id);
+            $scope.isvisible = true;
         },
         i18n: 'pt-br',
         filterOptions: { filterText: '', useExternalFilter: true }
 
     };
+
+    $scope.onGridDoubleClick = function (row) {
+        var rowData = $scope.myData[row.rowIndex];
+        alert("Double Clicked " + rowData)
+    }
+
+    /*Movimentação*/
+    $scope.newMovimentacao = function () {
+        var modalInstance = $modal.open({
+            templateUrl: 'movimentacao.html',
+            controller: function ($scope, $modalInstance) {
+                $scope.ok = function () {
+                    $modalInstance.close($scope.movimentacao);
+                };
+                $scope.cancel = function () {
+                    $modalInstance.dismiss('cancel');
+                };
+            }
+        });
+        modalInstance.result.then(function (movimentacao) {
+            Api.Movimentacao.save(movimentacao).$promise.then(function () {
+                movimentacao = null;
+            });
+        });
+    };
+
     this.columns2 =
         [
-            { field: 'data', width: 120,displayName: 'Movimentação',cellFilter:'date' },
+            { field: 'data', width: 120, displayName: 'Movimentação', cellFilter: 'date' },
             { field: 'solicitante', width: 250, displayName: 'Solcitante' },
             { field: 'anotacao', width: 500, displayName: 'Anotação' },
-            { width: 100, cellTemplate: 'buttonAnexo.html'}
+            { width: 100, cellTemplate: 'buttonAnexo.html' }
         ]
 
     $scope.gridMovimentacao = {
@@ -71,20 +96,15 @@ appModule.controller("requisicaoController", function ($scope, $modal, requisica
         columnDefs: this.columns2,
         multiSelect: false,
         i18n: 'pt-br',
+
         beforeSelectionChange: function (row) {
             $scope.getDocumento(row.entity.anexo_id)
         }
     };
 
-    /*Modal*/
-    $scope.open = function () {
-        var modalInstance = $modal.open({
-            templateUrl: 'docModal.html',
-            controller: function ($scope, $modalInstance) {
-                $scope.ok = function () {
-                    $modalInstance.close();
-                };
-            }
+    $scope.getMovimentacao = function (id, callback) {
+        Api.Movimentacao.query({ id: id }, function (data) {
+            $scope.movimentacoes = data;
         });
-    }
+    };
 });

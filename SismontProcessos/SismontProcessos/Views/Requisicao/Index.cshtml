@@ -4,7 +4,7 @@
 }
 <div ng-app="app">
     <div ng-controller="requisicaoController">
-        <div class="row">
+        <div class="row" ng-hide="isvisible">
             <div class="col-md-2 left">
                 <ul class="nav navbar">
                     <li class="dropdown">
@@ -20,20 +20,16 @@
                 </ul>
             </div>
             <div class="col-md-8 right">
-                <input type="search" class="form-control" placeholder="Pesquisar..." ng-model="search"/>
+                <input type="search" class="form-control" placeholder="Pesquisar..." ng-model="search" />
             </div>
         </div>
-        <div class="gridStyle col-lg-12" ng-grid="gridRequisicao"></div>
-        <div class="gridStyle col-lg-12" ng-grid="gridMovimentacao" @*ng-show="showDetail"*@>
-            <p class="h4">Movimentações</p>
+        <div class="row">
+            <div class="gridStyle col-lg-12" ng-grid="gridRequisicao" ng-hide="isvisible"></div>
         </div>
-        @{
-            Html.RenderPartial("~/Views/Requisicao/AnexoTemplate.cshtml");
-        }
+        <div ng-show="isvisible">
+            @Html.Partial("Edicao")
+        </div>
     </div>
 </div>
 
 @Scripts.Render("~/scripts/app/controller/requisicao.controller.js")
-@Scripts.Render("~/scripts/app/factory/requisicao.factory.js")
-@Scripts.Render("~/scripts/app/factory/movimentacao.factory.js")
-@Scripts.Render("~/scripts/app/factory/documento.factory.js")

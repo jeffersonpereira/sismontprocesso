@@ -9,6 +9,13 @@ using System.Xml.Serialization;
 
 namespace SismontProcessos.Models
 {
+    public enum TipoRequisicao
+    {
+        Outros,
+        Funcionario,
+        Rescisao,
+        Ferias
+    }
     [Serializable]
     public class FuncionarioModel
     {
@@ -42,10 +49,6 @@ namespace SismontProcessos.Models
                     }
                 }
             }
-            //System.IO.TextWriter file = new System.IO.StreamWriter(@"d:\teste.xml");
-            //XmlSerializer x = new XmlSerializer(typeof(FuncionarioModel));
-            //x.Serialize(file, funcionario);
-
             var requisisao = new xerife_requisicao();
             requisisao.tipo = Convert.ToInt32(value.tipo);
             requisisao.assunto_requisicao_id = Convert.ToInt32(value.assunto_requisicao_id);
@@ -54,6 +57,15 @@ namespace SismontProcessos.Models
             requisisao.situacao = 0;
             requisisao.filial_id = GlobalVars.FilialId;
             requisisao.xml = funcionario.ObjectToByteArray();
+            if(value.recursos!=null)
+            {
+                foreach(var recurso in value.recursos)
+                {
+                    requisisao.recurso += recurso + ";";
+                }
+                requisisao.recurso = requisisao.recurso.TrimEnd(';');
+            }
+            requisisao.tipo_requisicao = (int)TipoRequisicao.Funcionario;
             return requisisao;
         }
 

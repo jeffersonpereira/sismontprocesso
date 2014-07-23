@@ -857,6 +857,7 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-datepicker.css" />
     <Content Include="Content\bootstrap-datepicker3.css" />
+    <Content Include="Content\bootstrap-tagsinput.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -878,6 +879,8 @@
     <Content Include="Content\images\ui-icons_ef8c08_256x240.png" />
     <Content Include="Content\images\ui-icons_ffd27a_256x240.png" />
     <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jasny-bootstrap.css" />
+    <Content Include="Content\jasny-bootstrap.min.css" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\ng-grid.css" />
     <Content Include="Content\ng-grid.min.css" />
@@ -900,11 +903,6 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -939,15 +937,15 @@
     <Content Include="Scripts\app\controller\requisicao.controller.js" />
     <Content Include="Scripts\app\controller\rescisao.controller.js" />
     <Content Include="Scripts\app\controller\signin.controller.js" />
-    <Content Include="Scripts\app\factory\funcionario.factory.js" />
-    <Content Include="Scripts\app\factory\assunto.factory.js" />
-    <Content Include="Scripts\app\factory\documento.factory.js" />
-    <Content Include="Scripts\app\factory\movimentacao.factory.js" />
-    <Content Include="Scripts\app\factory\requisicao.factory.js" />
-    <Content Include="Scripts\app\factory\rescisao.factory.js" />
-    <Content Include="Scripts\app\factory\user.factory.js" />
+    <Content Include="Scripts\app\factory\api.factory.js" />
     <Content Include="Scripts\app\funcoes.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-tagsinput-angular.js" />
+    <Content Include="Scripts\bootstrap-tagsinput.js" />
+    <Content Include="Scripts\bootstrap-tagsinput.min.js" />
+    <Content Include="Scripts\bootstrap.file-input.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -976,9 +974,15 @@
       <DependentUpon>Xerife.edmx</DependentUpon>
       <LastGenOutput>Xerife.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\bootstrap-tagsinput.min.js.map" />
+    <Content Include="Content\bootstrap-tagsinput.less" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\jasny-bootstrap.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
     <Content Include="Scripts\i18n\angular-locale_af.js" />
@@ -1224,6 +1228,8 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
+    <Content Include="Scripts\jasny-bootstrap.js" />
+    <Content Include="Scripts\jasny-bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
@@ -1322,6 +1328,8 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Requisicao\Rescisao.cshtml" />
     <Content Include="Views\Requisicao\FuncionarioModal.cshtml" />
+    <Content Include="Views\Requisicao\MovimentacaoTemplate.cshtml" />
+    <Content Include="Views\Requisicao\Edicao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

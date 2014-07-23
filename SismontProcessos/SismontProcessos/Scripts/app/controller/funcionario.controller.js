@@ -1,10 +1,35 @@
-﻿var appModule = angular.module('app', ['ngResource', 'ngGrid', 'ui.bootstrap']);
-
-
-appModule.controller('funcionarioController', function ($scope, $http, $window, $modal, requisicaoFactory, assuntoFactory) {
-    assuntoFactory.query(function (data) {
+﻿appModule.controller('funcionarioController', function ($scope, $http, $window, $modal, Api) {
+    $scope.funcionario = {};
+    $scope.dependentes = [];
+    Api.Usuario.query(function (data) {
+        $scope.usuarios = data;
+    });
+    Api.Assunto.query(function (data) {
         $scope.assuntos = data;
     })
+
+    $scope.add = function () {
+        $scope.funcionario.tipo = $scope.tipo;
+        $scope.funcionario.assunto_requisicao_id = $scope.assunto.assunto_requisicao_id;
+        $scope.funcionario.tipo_requisicao = 'funcionario';
+        $scope.funcionario.recursos = $scope.logins;
+        Api.Requisicao.save($scope.funcionario).$promise.then(function () {
+            $window.location.href += "Requisicao";
+        });
+    };
+
+    $scope.login = '';
+    $scope.logins = [];
+    $scope.deleteTag = function (index) {
+        if ($scope.logins != null && $scope.logins.length > 0) {
+            $scope.logins.splice(index, 1);
+        }
+    };
+
+    $scope.addTag = function ($event) {
+        $scope.logins.push($scope.login)
+        $scope.login = '';
+    };
 
     $scope.open = function () {
         var modalInstance = $modal.open({
@@ -29,42 +54,6 @@ appModule.controller('funcionarioController', function ($scope, $http, $window, 
                 });
         }
     }
-
-    $scope.dependentes = [{ nome: 'Perla Chaves Soares da Silva', nascimento: '16/09/2007' }, { nome: 'Mara Cleide Chaves Soares', nascimento: '22/10/1984' }];
-
-    $scope.funcionario = {
-        nome: 'Jefferson Pereira da Silva',
-        sexo: 'M',
-        cargo: 'Programador',
-        salario: '1000.00',
-        cep:'40250130',
-        endereco: 'Rua São Roque',
-        numero: '3',
-        bairro: 'Cosme de Farias',
-        email:'jefferson@webguirra.com',
-        nascimento: '21/06/1983',
-        cpf: '99999999999',
-        rg: '9999',
-        admissao: '01/01/2000',
-        titulo_eleitor: '99999',
-        zona: '999',
-        secao: '999',
-        telefone: '7134987077',
-        celular: '7191952021',
-        pai: 'Jose Lopes Guirra',
-        mae: 'Raimunda Pereira da Silva',
-        cargo: 'Programador',
-        pis: '99999999999',
-        dependentes: [{ nome: 'Perla Chaves Soares da Silva', nascimento: '16/09/2007', tipo: 0, parentesco: 1 }, { nome: 'Mara Cleide Chaves Soares', nascimento: '22/10/1984', tipo: 0, parentesco: 1 }]
-    };
-    $scope.add = function () {
-        $scope.funcionario.tipo = $scope.tipo;
-        $scope.funcionario.assunto_requisicao_id = $scope.assunto.assunto_requisicao_id;
-        $scope.funcionario.tipo_requisicao = 'funcionario';
-        requisicaoFactory.save($scope.funcionario).$promise.then(function () {
-            $window.location.href += "Requisicao";
-        });
-    };
 
     this.columns =
         [

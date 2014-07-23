@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div ng-app="feriasApp">
+<div ng-app="app">
     <div ng-controller="feriasController">
         <form ng-submit="add()" name="form">
             @Html.Partial("RequisicaoTemplate")
@@ -22,7 +22,7 @@
                     <label class="control-label">Inicio do Gozo</label>
                     @*<input type="text" class="form-control datepicker" ng-model="ferias.inicio_gozo" data-provide="datepicker" data-date-format="dd/mm/yyyy" />*@
                     <div class="input-group">
-                        
+
                         <input type="text" class="form-control date" datepicker-popup="dd/MM/yyyy" ng-model="ferias.inicio_gozo" is-open="opened" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required />
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
@@ -32,7 +32,7 @@
                 <div class="form-group col-md-3">
                     <label class="control-label">Fim do Gozo</label>
                     <div class="input-group">
-                        <input type="text" class="form-control date" datepicker-popup="dd/MM/yyyy" ng-model="ferias.fim_gozo" is-open="opened" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required/>
+                        <input type="text" class="form-control date" datepicker-popup="dd/MM/yyyy" ng-model="ferias.fim_gozo" is-open="opened" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required />
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                         </span>
@@ -48,7 +48,7 @@
                     <label class="control-label">Observação</label>
                     <textarea class="form-control" ng-model="ferias.observacao"></textarea>
                 </div>
-                
+
             </div>
             <button class="btn btn-primary" type="submit">Salvar</button>
             <button class="btn btn-default" type="reset">Limpar</button>
@@ -64,8 +64,5 @@
 </script>
 
 @Scripts.Render("~/scripts/app/controller/ferias.controller.js")
-@Scripts.Render("~/scripts/app/factory/funcionario.factory.js")
-@Scripts.Render("~/scripts/app/factory/requisicao.factory.js")
-@Scripts.Render("~/scripts/app/factory/assunto.factory.js")
 @Scripts.Render("~/scripts/app/funcoes.js")
 

@@ -1,13 +1,16 @@
-﻿var appModule = angular.module('feriasApp', ['ngResource', 'ngGrid', 'ui.bootstrap']);
-appModule.controller('feriasController', function ($scope,$modal, requisicaoFactory, funcionarioFactory, assuntoFactory) {
+﻿appModule.controller('feriasController', function ($scope,$modal,Api) {
 
-    funcionarioFactory.query(function (data) {
+    Api.Funcionario.query(function (data) {
         $scope.funcionarios = data;
+        Api.Modal();
     });
 
-    assuntoFactory.query(function (data) {
-        $scope.assuntos = data;
+    Api.Usuario.query(function (data) {
+        $scope.usuarios = data;
     });
+    Api.Assunto.query(function (data) {
+        $scope.assuntos = data;
+    })
 
     $scope.ferias = {};
     $scope.add = function () {
@@ -16,7 +19,7 @@ appModule.controller('feriasController', function ($scope,$modal, requisicaoFact
         $scope.ferias.tipo_requisicao = 'ferias';
         $scope.ferias.inicio_gozo = dateFormat($scope.ferias.inicio_gozo);
         $scope.ferias.fim_gozo = dateFormat($scope.ferias.fim_gozo);
-        requisicaoFactory.save($scope.ferias).$promise.then(function () {
+        Api.Requisicao.save($scope.ferias).$promise.then(function () {
             $window.location.href += "Requisicao";
         });
     };

@@ -159,6 +159,7 @@ namespace SismontProcessos.DB
         public virtual ICollection<xerife_protocolo> xerife_protocolo { get; set; }
         public virtual ICollection<xerife_situacao_fiscal> xerife_situacao_fiscal { get; set; }
         public virtual ICollection<xerife_vale_valor> xerife_vale_valor { get; set; }
+        public virtual ICollection<xerife_requisicao> xerife_requisicao { get; set; }
         public virtual xerife_fpas xerife_fpas { get; set; }
         public virtual xerife_gps xerife_gps { get; set; }
         public virtual xerife_infaz xerife_infaz { get; set; }
@@ -170,6 +171,5 @@ namespace SismontProcessos.DB
         public virtual xerife_recolhimento_sefip xerife_recolhimento_sefip { get; set; }
         public virtual xerife_regime_tributario xerife_regime_tributario { get; set; }
         public virtual xerife_sindicato xerife_sindicato { get; set; }
-        public virtual ICollection<xerife_requisicao> xerife_requisicao { get; set; }
     }
 }
