@@ -63,17 +63,17 @@
         alert("Double Clicked " + rowData)
     }
 
+
+    $scope.movimentacao = {arquivo:''};
     /*Movimentação*/
     $scope.newMovimentacao = function () {
         var modalInstance = $modal.open({
             templateUrl: 'movimentacao.html',
-            controller: function ($scope, $modalInstance) {
-                $scope.ok = function () {
-                    $modalInstance.close($scope.movimentacao);
-                };
-                $scope.cancel = function () {
-                    $modalInstance.dismiss('cancel');
-                };
+            controller: movimentacaoController,
+            resolve: {
+                movimentacao: function () {
+                    return $scope.movimentacao;
+                }
             }
         });
         modalInstance.result.then(function (movimentacao) {
@@ -108,3 +108,36 @@
         });
     };
 });
+
+var movimentacaoController = function ($scope, $modalInstance, $http, $timeout, $upload, movimentacao) {
+
+    $scope.movimentacao = movimentacao;
+    $scope.ok = function () {
+        $modalInstance.close($scope.movimentacao);
+    };
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
+    $scope.upload=[];
+    $scope.onFileSelect = function ($files) {
+        for (var i = 0; i < $files.length; i++) {
+            var $file = $files[i];
+            (function (index) {
+                $scope.upload[index] = $upload.upload({
+                    url: "./api/movimentacaovalue",
+                    method: "POST",
+                    file: $file
+                }).success(function (data, status, headers, config) {
+                    $scope.movimentacao.arquivo = 
+                }).error(function (data, status, headers, config) {
+                    // file failed to upload
+                    console.log(data);
+                });
+            })(i);
+        }
+    }
+
+    $scope.abortUpload = function (index) {
+        $scope.upload[index].abort();
+    }
+};

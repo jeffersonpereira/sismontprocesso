@@ -1,25 +1,27 @@
 ﻿<script type="text/ng-template" id="movimentacao.html">
-    <div class="modal-header">
-        <h3 class="modal-title">Movimentação</h3>
-    </div>
-    <div class="modal-body">
-        <div class="row">
-            <div class="form-group">
-                <label class="control-label">Anotação</label>
-                <textarea cols="30" rows="10" class="form-control" ng-model="movimentacao.anotacao" ></textarea>
+    <form ng-submit="ok()">
+        <div class="modal-header">
+            <h3 class="modal-title">Movimentação</h3>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label">Anotação</label>
+                    <textarea cols="30" rows="10" class="form-control" ng-model="movimentacao.anotacao"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                    <span class="btn btn-default btn-file"><span class="fileinput-new">Arquivo</span><span class="fileinput-exists">Alterar</span><input type="file" ng-file-select="onFileSelect($files)" multiple></span>
+                    <span class="fileinput-filename"></span>
+                    <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
+                </div>
+                @*<input type="file" ng-file-select="onFileSelect($files)" multiple>*@
             </div>
         </div>
-        <div class="row">
-            <div class="fileinput fileinput-new input-group" data-provides="fileinput">
-                <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-                <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Selecione o arquivo</span>
-                <span class="fileinput-exists">Change</span><input type="file" name="..."></span>
-                <a href="#" class="input-group-addon btn btn-default fileinput-exists fa fa-minus-circle" data-dismiss="fileinput"></a>
-            </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="submit">Salvar</button>
+            <button class="btn btn-default" ng-click="cancel()">Cancelar</button>
         </div>
-    </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" ng-click="ok()">Salvar</button>
-        <button class="btn btn-default" ng-click="cancel()">Cancelar</button>
-    </div>
+    </form>
 </script>

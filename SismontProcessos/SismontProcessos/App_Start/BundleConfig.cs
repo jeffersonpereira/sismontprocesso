@@ -35,7 +35,8 @@ namespace SismontProcessos
                 Include("~/Scripts/angular-route.min.js").
                 Include("~/Scripts/angular-sanitize.min.js").
                 Include("~/Scripts/angular-scenario.js").
-                Include("~/Scripts/angular-touch.min.js"));
+                Include("~/Scripts/angular-touch.min.js").
+                Include("~/Scripts/angular-file-upload.min.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

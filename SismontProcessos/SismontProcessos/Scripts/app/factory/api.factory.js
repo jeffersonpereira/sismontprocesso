@@ -1,8 +1,9 @@
-﻿var appModule = angular.module('app', ['ngResource', 'ngGrid', 'ui.bootstrap']);
+﻿var appModule = angular.module('app', ['ngResource', 'ngGrid', 'ui.bootstrap', 'angularFileUpload']);
 appModule.factory("Api", function ($resource) {
     this.metodos = {
         query: { method: 'GET', params: { id: '' }, isArray: true },
         post: { method: 'POST' },
+        upload: { method: 'POST' },
         update:{ method: 'PUT', params: { id: '@id' } },
         remove:{ method: 'DELETE' },
         };
