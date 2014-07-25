@@ -8,6 +8,7 @@ using System.Web.Http.Cors;
 using Breeze.ContextProvider.EF6;
 using SismontProcessos.DB;
 using SismontProcessos.Models;
+using System.IO;
 
 namespace SismontProcessos.Controllers
 {
@@ -37,11 +38,50 @@ namespace SismontProcessos.Controllers
         }
 
         [HttpPut]
-        [Route("api/requisicao")]
-        public void Update([FromBody]xerife_requisicao requisicao)
+        [Route("api/requisicao/{id}")]
+        public void Update(int id,[FromBody]dynamic value)
         {
-            var original = _context.Context.xerife_requisicao.FirstOrDefault(x => x.requisicao_id == requisicao.requisicao_id);
-            DoUpdate<xerife_requisicao>(requisicao, original);
+            var original = _context.Context.xerife_requisicao.FirstOrDefault(x => x.requisicao_id == id);
+            AddMovimentacao(original, value);
+        }
+
+        void AddMovimentacao(xerife_requisicao requisicao, dynamic value)
+        {
+            if (requisicao != null)
+            {
+                var movimentacao = new xerife_movimentacao_requisicao();
+                movimentacao.data = DateTime.Today;
+                movimentacao.anotacao = value.anotacao;
+                movimentacao.solicitante = _context.Context.UsuarioAtual.login;
+                if (value.arquivo != null)
+                {
+                    movimentacao.anexo_id = Guid.NewGuid();
+                    var arquivo = new xerife_arquivo();
+                    arquivo.nome = value.arquivo.nome_original;
+                    string fileName = string.Format("{0}\\{1}", GlobalVars.UploadDiretorio, value.arquivo.nome_temporario);
+                    arquivo.conteudo = File.ReadAllBytes(fileName);
+                    var infor = new FileInfo(fileName);
+                    arquivo.tamanho = (int)infor.Length;
+
+                    var doc = new xerife_documento();
+                    doc.anexo_id = movimentacao.anexo_id.Value;
+                    doc.tabela = "xerife_movimentacao_requisicao";
+                    doc.usuario = movimentacao.solicitante;
+                    doc.data_documento = infor.CreationTime.Date;
+                    doc.data_upload = DateTime.Today;
+                    doc.data_entrega = DateTime.Today;
+                    var tipo = _context.Context.xerife_tipo_documento.FirstOrDefault(x => x.descricao.ToLower().Equals("anexo"));
+                    if(tipo==null)
+                    {
+                        tipo = new xerife_tipo_documento();
+                        tipo.descricao = "Anexo";
+                    }
+                    doc.xerife_tipo_documento = tipo;
+                    doc.xerife_arquivo = arquivo;
+                }
+                requisicao.xerife_movimentacao_requisicao.Add(movimentacao);
+                _context.Context.SaveChanges();
+            }
         }
 
         [HttpPost]
@@ -74,7 +114,7 @@ namespace SismontProcessos.Controllers
                             {
                                 //SendMail(requisicao);
                                 HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, requisicao);
-                                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = requisicao.requisicao_id }));
+                                //response.Headers.Location = new Uri(Request.RequestUri,Url.Route("api/requisicao",new{id=requisicao.requisicao_id}));
                                 return response;
                             }
 

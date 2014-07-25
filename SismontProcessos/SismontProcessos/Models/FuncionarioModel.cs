@@ -28,7 +28,7 @@ namespace SismontProcessos.Models
                 if (temp != null)
                 {
                     object valor = null;
-                    if(p.PropertyType.Equals(typeof(DateTime)))
+                    if (p.PropertyType.Equals(typeof(DateTime)) || (p.PropertyType.Equals(typeof(DateTime?)) && temp!=null))
                     {
                         valor = DateTime.ParseExact(temp.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                         p.SetValue(funcionario, valor);

@@ -9,34 +9,35 @@ namespace SismontProcessos
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js", "~/Scripts/jquery.js", 
-                        "~/Scripts/jquery.mask.min.js",
-                        "~/Scripts/jquery-ui.min.js"));
+                        "~/Scripts/jquery/jquery-{version}.js",
+                        "~/Scripts/jquery/jquery.js",
+                        "~/Scripts/jquery/jquery.mask.min.js",
+                        "~/Scripts/jquery/jquery-ui.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryplugin").Include(
-                        "~/Scripts/jquery.metisMenu.js",
-                        "~/Scripts/jquery.idletimeout.js",
-                        "~/Scripts/jquery.idletimer.js"));
+                        "~/Scripts/jquery/jquery.metisMenu.js",
+                        "~/Scripts/jquery/jquery.idletimeout.js",
+                        "~/Scripts/jquery/jquery.idletimer.js"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/tema").Include(
                         "~/Scripts/tema/treemenu.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angularjs").
-                Include("~/Scripts/angular.js").
-                Include("~/Scripts/angular-animate.min.js").
-                Include("~/Scripts/angular-cookie.min.js").
-                Include("~/Scripts/angular-loader.min.js").
-                Include("~/Scripts/angular-mocks.js").
-                Include("~/Scripts/angular-resource.min.js").
-                Include("~/Scripts/angular-route.min.js").
-                Include("~/Scripts/angular-sanitize.min.js").
-                Include("~/Scripts/angular-scenario.js").
-                Include("~/Scripts/angular-touch.min.js").
-                Include("~/Scripts/angular-file-upload.min.js"));
+                Include("~/Scripts/angularjs/angular.js").
+                Include("~/Scripts/angularjs/angular-animate.min.js").
+                Include("~/Scripts/angularjs/angular-cookie.min.js").
+                Include("~/Scripts/angularjs/angular-loader.min.js").
+                Include("~/Scripts/angularjs/angular-mocks.js").
+                Include("~/Scripts/angularjs/angular-resource.min.js").
+                Include("~/Scripts/angularjs/angular-route.min.js").
+                Include("~/Scripts/angularjs/angular-sanitize.min.js").
+                Include("~/Scripts/angularjs/angular-scenario.js").
+                Include("~/Scripts/angularjs/angular-touch.min.js").
+                Include("~/Scripts/angularjs/angular-file-upload.min.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -44,12 +45,12 @@ namespace SismontProcessos
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/bootstrap-datepicker.js",
+                      "~/Scripts/bootstrap/bootstrap.js",
+                      "~/Scripts/bootstrap/bootstrap-datepicker.js",
                       "~/Scripts/locales/bootstrap-datepicker.pt-BR.js",
-                      "~/Scripts/ui-bootstrap-tpls-0.11.0.min.js",
-                      "~/Scripts/bootstrap.file-input.js",
-                      "~/Scripts/jasny-bootstrap.min.js",
+                      "~/Scripts/bootstrap/ui-bootstrap-tpls-0.11.0.min.js",
+                      "~/Scripts/bootstrap/bootstrap.file-input.js",
+                      "~/Scripts/bootstrap/jasny-bootstrap.min.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular-ui").Include(

@@ -1,4 +1,4 @@
-﻿appModule.controller('funcionarioController', function ($scope, $http, $window, $modal, Api) {
+﻿appModule.controller('funcionarioController', function ($scope, $http, $location,$window, $modal, Api) {
     $scope.funcionario = {};
     $scope.dependentes = [];
     Api.Usuario.query(function (data) {
@@ -14,7 +14,7 @@
         $scope.funcionario.tipo_requisicao = 'funcionario';
         $scope.funcionario.recursos = $scope.logins;
         Api.Requisicao.save($scope.funcionario).$promise.then(function () {
-            $window.location.href += "Requisicao";
+            $window.location.href = $window.location.href;
         });
     };
 
@@ -30,13 +30,13 @@
         $scope.logins.push($scope.login)
         $scope.login = '';
     };
-
+    $scope.funcionario.dependentes = [];
     $scope.open = function () {
         var modalInstance = $modal.open({
             templateUrl: 'dependente.html',
             controller: dependenteController
         });
-
+        
         modalInstance.result.then(function (dependente) {
             $scope.funcionario.dependentes.push(dependente);
             dependente = null;
@@ -44,6 +44,7 @@
     };
 
     $scope.getEndereco = function () {
+        $scope.funcionario.cep = $scope.funcionario.cep.replace('.', '').replace('-', '');
         if ($scope.funcionario.cep.length == 8) {
             $http.get('http://cep.correiocontrol.com.br/' + $scope.funcionario.cep + '.json').
                 success(function (data) {
@@ -71,7 +72,7 @@
 });
 
 var dependenteController = function ($scope, $modalInstance) {
-    $scope.dependente = {nome:'',nascimento:'',tipo:'',parentesco:'',sexo:'',cpf:''};
+    $scope.dependente = {};
     $scope.ok = function () {
         $modalInstance.close($scope.dependente);
     };

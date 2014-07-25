@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -28,6 +29,17 @@ namespace SismontProcessos
             {
                 int? id = HttpContext.Current.Session["usuarioId"] as int?;
                 return id.GetValueOrDefault(0);
+            }
+        }
+
+        public static string UploadDiretorio
+        {
+            get 
+            {
+                string uploadFolder = "~/App_Data/FileUploads";
+                string root = HttpContext.Current.Server.MapPath(uploadFolder);
+                Directory.CreateDirectory(root);
+                return root;
             }
         }
     }

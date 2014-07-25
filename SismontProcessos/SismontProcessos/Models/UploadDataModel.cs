@@ -7,7 +7,7 @@ namespace SismontProcessos.Models
 {
     public class UploadDataModel
     {
-        public string NomeOriginal { get; set; }
-        public string NomeTemporario { get; set; }
+        public string nome_original { get; set; }
+        public string nome_temporario { get; set; }
     }
 }

@@ -60,7 +60,6 @@
 
     $scope.onGridDoubleClick = function (row) {
         var rowData = $scope.myData[row.rowIndex];
-        alert("Double Clicked " + rowData)
     }
 
 
@@ -77,12 +76,11 @@
             }
         });
         modalInstance.result.then(function (movimentacao) {
-            Api.Movimentacao.save(movimentacao).$promise.then(function () {
-                movimentacao = null;
+            Api.Requisicao.update({id:$scope.requisicao.requisicao_id},movimentacao).$promise.then(function () {
+                $scope.getMovimentacao($scope.requisicao.requisicao_id);
             });
         });
     };
-
     this.columns2 =
         [
             { field: 'data', width: 120, displayName: 'Movimentação', cellFilter: 'date' },
@@ -128,7 +126,8 @@ var movimentacaoController = function ($scope, $modalInstance, $http, $timeout, 
                     method: "POST",
                     file: $file
                 }).success(function (data, status, headers, config) {
-                    $scope.movimentacao.arquivo = 
+                    $scope.movimentacao.arquivo = data.uploadFile;
+                    console.log(data);
                 }).error(function (data, status, headers, config) {
                     // file failed to upload
                     console.log(data);
