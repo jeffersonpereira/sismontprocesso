@@ -1,5 +1,5 @@
-﻿var appModule = angular.module('app', ['ngResource', 'ngGrid', 'ui.bootstrap', 'angularFileUpload']);
-appModule.factory("Api", function ($resource) {
+﻿var appModule = angular.module('app', ['ngResource', 'ngGrid', 'ui.bootstrap', 'angularFileUpload', 'toaster', 'ngAnimate']);
+appModule.factory("Api", function ($resource, toaster) {
     this.metodos = {
         query: { method: 'GET', params: { id: '' }, isArray: true },
         post: { method: 'POST' },
@@ -9,11 +9,20 @@ appModule.factory("Api", function ($resource) {
         };
     return {
         Requisicao: $resource('/api/requisicao/:id', {}, this.metodos),
-        Assunto: $resource('/api/assunto/:id', {}, this.metodos),
+        Assunto: $resource('/api/assunto/:id', {}, { query: { method: 'GET', params: { id: '' }, isArray: true }, getByDescricao: { method: 'GET', params: { descricao: '' }, isArray: true } }),
         Usuario: $resource('/api/loginvalue/:id', {}, this.metodos),
         Rescisao: $resource('/api/rescisaovalue/:id', {}, this.metodos),
         Funcionario: $resource('/api/funcionariovalue/:id', {}, this.metodos),
         Documento: $resource('/api/documentovalue/:id', {}, this.metodos),
-        Movimentacao: $resource('/api/movimentacaovalue/:id', {}, this.metodos)
+        Movimentacao: $resource('/api/movimentacaovalue/:id',
+            {},
+            {
+                getById: { method: 'GET', params: { id: '' }, isArray: true },
+                getUrl: { method: 'GET', params: { anexoid: '' }, isArray: false },
+                upload: { method: 'POST' },
+            }),
+        Notificacao: function (titulo,texto) {
+            toaster.pop('note', titulo, texto);
+        }
     };
 });

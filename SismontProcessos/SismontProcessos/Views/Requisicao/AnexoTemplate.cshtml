@@ -28,6 +28,6 @@
 
 <script type="text/ng-template" id="buttonAnexo.html">
     <div class="ngCellText" ng-cell-input>
-        <a href="#" data-toggle="dropdown" class="dropdown-toggle" ng-click="open()" ng-show="row.getProperty('isanexo')"><span class=" label label-info">{{row.getProperty('qtd')}}</span>  <i class="fa fa-paperclip"></i></a>
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle" ng-click="anexoDownload(row.getProperty('anexo_id'))" ng-show="row.getProperty('isanexo')"><span class=" label label-info">{{row.getProperty('qtd')}}</span>  <i class="fa fa-paperclip"></i></a>
     </div>
 </script>

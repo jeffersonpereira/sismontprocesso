@@ -15,5 +15,14 @@ namespace SismontProcessos.Controllers
         {
             return Get<xerife_assunto_requisicao>();
         }
+
+        [HttpGet]
+        [Route("descricao")]
+        public IQueryable<xerife_assunto_requisicao> GetAssuntoByDescricao(string descricao)
+        {
+            var p = new Dictionary<string, object>();
+            p.Add("descricao", descricao);
+            return Get<xerife_assunto_requisicao>(p);
+        }
     }
 }

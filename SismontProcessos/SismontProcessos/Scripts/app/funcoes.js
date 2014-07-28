@@ -8,7 +8,6 @@
     if (dia < 10) {
         dia = "0" + dia;
     }
-    alert(mes);
     return dia + '/' + mes + '/' + ano;
 }
 

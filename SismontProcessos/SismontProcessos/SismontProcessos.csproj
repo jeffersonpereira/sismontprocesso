@@ -179,6 +179,15 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Toast">
+      <HintPath>..\packages\Toaster.2.1.10716.0\lib\net45\Toast.exe</HintPath>
+    </Reference>
+    <Reference Include="Toaster">
+      <HintPath>..\packages\Toaster.2.1.10716.0\lib\net45\Toaster.dll</HintPath>
+    </Reference>
+    <Reference Include="ToolBelt">
+      <HintPath>..\packages\Toaster.2.1.10716.0\lib\net45\ToolBelt.dll</HintPath>
+    </Reference>
     <Reference Include="WebActivator">
       <HintPath>..\packages\WebActivator.1.0.0.0\lib\WebActivator.dll</HintPath>
     </Reference>
@@ -192,6 +201,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\Download\" />
     <Folder Include="App_Data\FileUploads\" />
   </ItemGroup>
   <ItemGroup>
@@ -889,6 +899,7 @@
     <Content Include="Content\style-md.css" />
     <Content Include="Content\style-sm.css" />
     <Content Include="Content\style-xs.css" />
+    <Content Include="Content\toaster.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -1307,6 +1318,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\tema\treemenu.js" />
     <Content Include="Scripts\bootstrap\ui-bootstrap-tpls-0.11.0.min.js" />
+    <Content Include="Scripts\toaster.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

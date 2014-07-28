@@ -50,9 +50,10 @@
                 </div>
 
             </div>
-            <button class="btn btn-primary" type="submit">Salvar</button>
+            <button class="btn btn-primary" type="submit" ng-disabled="form.$invalid">Salvar</button>
             <button class="btn btn-default" type="reset">Limpar</button>
         </form>
+        <toaster-container toaster-options="{'time-out': 3000, 'close-button':true}"></toaster-container>
         @Html.Partial("FuncionarioModal")
     </div>
 </div>

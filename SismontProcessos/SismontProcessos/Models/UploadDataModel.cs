@@ -9,5 +9,6 @@ namespace SismontProcessos.Models
     {
         public string nome_original { get; set; }
         public string nome_temporario { get; set; }
+        public string url_download { get; set; }
     }
 }

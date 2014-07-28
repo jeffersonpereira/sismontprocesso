@@ -43,5 +43,12 @@ namespace SismontProcessos.Controllers
             }
             return this.Request.CreateErrorResponse(HttpStatusCode.BadRequest, this.ModelState);
         }
+
+        //[HttpPost]
+        //public HttpResponseMessage SignOut()
+        //{
+        //    FormsAuthentication.SignOut();
+        //    return this.Request.CreateErrorResponse(HttpStatusCode.BadRequest, this.ModelState);
+        //}
     }
 }

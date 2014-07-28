@@ -1,12 +1,8 @@
 ﻿appModule.controller('funcionarioController', function ($scope, $http, $location,$window, $modal, Api) {
     $scope.funcionario = {};
     $scope.dependentes = [];
-    Api.Usuario.query(function (data) {
-        $scope.usuarios = data;
-    });
-    Api.Assunto.query(function (data) {
-        $scope.assuntos = data;
-    })
+    $scope.usuarios = Api.Usuario.query();
+    $scope.assuntos = Api.Assunto.query();
 
     $scope.add = function () {
         $scope.funcionario.tipo = $scope.tipo;
@@ -14,7 +10,10 @@
         $scope.funcionario.tipo_requisicao = 'funcionario';
         $scope.funcionario.recursos = $scope.logins;
         Api.Requisicao.save($scope.funcionario).$promise.then(function () {
-            $window.location.href = $window.location.href;
+            Api.Notificacao('Sucesso','Requisição adicionada com sucesso.');
+            $scope.funcionario = null;
+        }, function () {
+            Api.Notificacao('Erro', 'Ocorreu um erro. Verifique as informações e tente novamente.');
         });
     };
 

@@ -29,6 +29,26 @@ namespace SismontProcessos.Controllers
             return Get<xerife_movimentacao_requisicao>(p);
         }
 
+        [HttpGet]
+        public UploadDataModel GetUrlDownload(string anexoId)
+        {
+            Dictionary<string, object> p = new Dictionary<string, object>();
+            p.Add("anexo_id", "'"+anexoId+"'");
+            var docs = Get<xerife_documento>(p);
+            if (docs!=null && docs.Count() > 0)
+            {
+                var doc = docs.First();
+                p.Clear();
+                p.Add("arquivo_id", doc.arquivo_id);
+                var arquivo = Get<xerife_arquivo>(p);
+                string fileName = System.IO.Path.Combine(GlobalVars.DownloadDiretorio, arquivo.First().nome);
+                File.WriteAllBytes(fileName, arquivo.First().conteudo);
+                //var link = GlobalVars.CreateLink(fileName);
+                return new UploadDataModel { url_download = GlobalVars.CreateLink(fileName) };
+            }
+            return null;
+        }
+
         [HttpPost]
         public async Task<HttpResponseMessage> Upload()
         {

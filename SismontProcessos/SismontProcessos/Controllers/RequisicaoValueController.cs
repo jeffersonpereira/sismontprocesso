@@ -62,6 +62,7 @@ namespace SismontProcessos.Controllers
                     arquivo.conteudo = File.ReadAllBytes(fileName);
                     var infor = new FileInfo(fileName);
                     arquivo.tamanho = (int)infor.Length;
+                    _context.Context.xerife_arquivo.Add(arquivo);
 
                     var doc = new xerife_documento();
                     doc.anexo_id = movimentacao.anexo_id.Value;
@@ -77,7 +78,7 @@ namespace SismontProcessos.Controllers
                         tipo.descricao = "Anexo";
                     }
                     doc.xerife_tipo_documento = tipo;
-                    doc.xerife_arquivo = arquivo;
+                    arquivo.xerife_documento.Add(doc);
                 }
                 requisicao.xerife_movimentacao_requisicao.Add(movimentacao);
                 _context.Context.SaveChanges();

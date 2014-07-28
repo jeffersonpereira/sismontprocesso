@@ -46,7 +46,7 @@ namespace SismontProcessos.Models
                 }
                 requisisao.recurso = requisisao.recurso.TrimEnd(';');
             }
-            requisisao.tipo_requisicao = (int)TipoRequisicao.Ferias;
+            requisisao.tipo_requisicao = (int)TipoRequisicao.Funcionario;
             return requisisao;
         }
 

@@ -37,7 +37,8 @@ namespace SismontProcessos
                 Include("~/Scripts/angularjs/angular-sanitize.min.js").
                 Include("~/Scripts/angularjs/angular-scenario.js").
                 Include("~/Scripts/angularjs/angular-touch.min.js").
-                Include("~/Scripts/angularjs/angular-file-upload.min.js"));
+                Include("~/Scripts/angularjs/angular-file-upload.min.js").
+                Include("~/Scripts/toaster.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -68,7 +69,8 @@ namespace SismontProcessos
                       "~/Content/style-md.css",
                       "~/Content/font-awesome.css",
                       "~/Content/jquery-ui.min.css",
-                      "~/Content/jasny-bootstrap.min.css"));
+                      "~/Content/jasny-bootstrap.min.css",
+                      "~/Content/toaster.css"));
         }
     }
 }

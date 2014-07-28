@@ -6,7 +6,7 @@
     });
 
     $scope.isdetail = false;
-    $scope.getRequisicao = function (id,callback) {
+    $scope.getRequisicaoById = function (id,callback) {
             Api.Requisicao.query({ id: id }, function (data) {
             $scope.requisicao = data;
         });
@@ -43,6 +43,7 @@
     $scope.gridRequisicao = {
         data: 'requisicoes| filter: search',
         columnDefs: this.columns,
+        canSelectRows: true,
         showGroupPanel: true,
         groupsCollapsedByDefault: true /*se usará agrupamento padrão*/,
         showColumnMenu:true,/*usuário seleciona os campos do grid*/
@@ -65,6 +66,14 @@
 
     $scope.movimentacao = {arquivo:''};
     /*Movimentação*/
+
+    $scope.anexoDownload = function (anexo_id) {
+        Api.Movimentacao.getUrl({ anexoid: anexo_id }, function (data) {
+            window.open(data.url_download, '_blank', '');
+        });
+        
+    };
+
     $scope.newMovimentacao = function () {
         var modalInstance = $modal.open({
             templateUrl: 'movimentacao.html',
@@ -86,22 +95,22 @@
             { field: 'data', width: 120, displayName: 'Movimentação', cellFilter: 'date' },
             { field: 'solicitante', width: 250, displayName: 'Solcitante' },
             { field: 'anotacao', width: 500, displayName: 'Anotação' },
-            { width: 100, cellTemplate: 'buttonAnexo.html' }
+            { field: 'isanexo', displayName: '', width: 100, cellTemplate: 'buttonAnexo.html' }
         ]
 
     $scope.gridMovimentacao = {
         data: 'movimentacoes',
         columnDefs: this.columns2,
+        canSelectRows: true,
         multiSelect: false,
         i18n: 'pt-br',
-
         beforeSelectionChange: function (row) {
             $scope.getDocumento(row.entity.anexo_id)
         }
     };
 
     $scope.getMovimentacao = function (id, callback) {
-        Api.Movimentacao.query({ id: id }, function (data) {
+        Api.Movimentacao.getById({ id: id }, function (data) {
             $scope.movimentacoes = data;
         });
     };
@@ -127,7 +136,6 @@ var movimentacaoController = function ($scope, $modalInstance, $http, $timeout, 
                     file: $file
                 }).success(function (data, status, headers, config) {
                     $scope.movimentacao.arquivo = data.uploadFile;
-                    console.log(data);
                 }).error(function (data, status, headers, config) {
                     // file failed to upload
                     console.log(data);

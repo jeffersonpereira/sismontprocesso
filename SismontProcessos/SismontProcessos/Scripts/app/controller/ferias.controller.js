@@ -2,7 +2,6 @@
 
     Api.Funcionario.query(function (data) {
         $scope.funcionarios = data;
-        Api.Modal();
     });
 
     Api.Usuario.query(function (data) {
@@ -11,6 +10,17 @@
     Api.Assunto.query(function (data) {
         $scope.assuntos = data;
     })
+    $scope.login = '';
+    $scope.logins = [];
+    $scope.deleteTag = function (index) {
+        if ($scope.logins != null && $scope.logins.length > 0) {
+            $scope.logins.splice(index, 1);
+        }
+    };
+    $scope.addTag = function ($event) {
+        $scope.logins.push($scope.login)
+        $scope.login = '';
+    };
 
     $scope.ferias = {};
     $scope.add = function () {
@@ -20,7 +30,9 @@
         $scope.ferias.inicio_gozo = dateFormat($scope.ferias.inicio_gozo);
         $scope.ferias.fim_gozo = dateFormat($scope.ferias.fim_gozo);
         Api.Requisicao.save($scope.ferias).$promise.then(function () {
-            $window.location.href += "Requisicao";
+            Api.Notificacao('Sucesso','Requisição adicionada com sucesso.');
+        }, function (erro) {
+            Api.Notificacao('Erro', erro);
         });
     };
 

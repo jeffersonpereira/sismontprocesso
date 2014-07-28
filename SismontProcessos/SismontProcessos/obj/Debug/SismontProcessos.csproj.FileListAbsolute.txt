@@ -177,3 +177,6 @@ D:\Códigos Fontes\Sistema de Processos\SismontProcessos\SismontProcessos\bin\ko
 D:\Códigos Fontes\Sistema de Processos\SismontProcessos\SismontProcessos\bin\ru\System.Spatial.resources.dll
 D:\Códigos Fontes\Sistema de Processos\SismontProcessos\SismontProcessos\bin\zh-Hans\System.Spatial.resources.dll
 D:\Códigos Fontes\Sistema de Processos\SismontProcessos\SismontProcessos\bin\zh-Hant\System.Spatial.resources.dll
+D:\Códigos Fontes\Sistema de Processos\SismontProcessos\SismontProcessos\bin\Toast.exe
+D:\Códigos Fontes\Sistema de Processos\SismontProcessos\SismontProcessos\bin\Toaster.dll
+D:\Códigos Fontes\Sistema de Processos\SismontProcessos\SismontProcessos\bin\ToolBelt.dll

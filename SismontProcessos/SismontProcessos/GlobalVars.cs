@@ -42,5 +42,23 @@ namespace SismontProcessos
                 return root;
             }
         }
-    }
+
+        public static string DownloadDiretorio
+        {
+            get
+            {
+                string uploadFolder = "~/App_Data/Download";
+                string root = HttpContext.Current.Server.MapPath(uploadFolder);
+                Directory.CreateDirectory(root);
+                return root;
+            }
+        }
+
+        public static string CreateLink(string fileName)
+        {
+            string root = HttpContext.Current.Request.Url.Authority;
+            fileName = Path.GetFileName(fileName);
+            return string.Format("{0}/{1}/{2}", root, "Download", fileName);
+        }
+   }
 }

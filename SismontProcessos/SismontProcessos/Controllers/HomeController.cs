@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace SismontProcessos.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
-        [Authorize]
         public ActionResult Index()
         {
             return View();
