@@ -29,8 +29,10 @@
         $scope.ferias.tipo_requisicao = 'ferias';
         $scope.ferias.inicio_gozo = dateFormat($scope.ferias.inicio_gozo);
         $scope.ferias.fim_gozo = dateFormat($scope.ferias.fim_gozo);
+        $scope.ferias.recursos = $scope.logins;
         Api.Requisicao.save($scope.ferias).$promise.then(function () {
-            Api.Notificacao('Sucesso','Requisição adicionada com sucesso.');
+            Api.Notificacao('Sucesso', 'Requisição adicionada com sucesso.');
+            $scope.ferias = null;
         }, function (erro) {
             Api.Notificacao('Erro', erro);
         });

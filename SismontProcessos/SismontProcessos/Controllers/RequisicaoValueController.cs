@@ -81,7 +81,10 @@ namespace SismontProcessos.Controllers
                     arquivo.xerife_documento.Add(doc);
                 }
                 requisicao.xerife_movimentacao_requisicao.Add(movimentacao);
-                _context.Context.SaveChanges();
+                if (_context.Context.SaveChanges() > 0)
+                {
+                    SendMail(requisicao);
+                }
             }
         }
 

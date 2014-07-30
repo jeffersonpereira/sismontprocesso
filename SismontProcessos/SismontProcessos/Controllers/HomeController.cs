@@ -11,6 +11,8 @@ namespace SismontProcessos.Controllers
     {
         public ActionResult Index()
         {
+            var teste = new RequisicaoValueController();
+            ViewBag.Total = teste.GetRequisicao().Count();
             return View();
         }
     }

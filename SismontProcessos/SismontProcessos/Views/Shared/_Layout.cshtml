@@ -16,7 +16,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/tema")
     @Scripts.Render("~/scripts/app/factory/api.factory.js")
-    
+    @Scripts.Render("~/scripts/app/controller/global.controller.js")
     
 </head>
 <body>
@@ -31,59 +31,7 @@
                     <strong>@Request.RequestContext.HttpContext.Session["cnpj"]</strong><br>@Request.RequestContext.HttpContext.Session["empresa"]<br>@DateTime.Today.ToString("dd/MM/yyyy")
                 </div>
             </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <ul class="nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="label label-danger">3</span>  <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="label label-danger">5</span> <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span class="label label-danger">6</span> <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
-                            <li class="divider"></li>
-                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+                @Html.Partial("_TopMenu")
         </div>
     </header>
 
@@ -92,29 +40,9 @@
         <nav class="navbar-default page-nav" role="navigation">
             <div class="sidebar-collapse">
                 <div class="sidebar-search">
-                    <input type="text" id="input-search" class="form-control" placeholder="Search...">
+                    <input type="text" id="input-search" class="form-control" placeholder="Pesquisar...">
                 </div>
-
-                <ul class="nav" id="side-menu">
-
-                    <li><a href="~/Home"><i class="fa fa-dashboard fa-fw"></i> Home</a></li>
-                    <li>
-                        <a href="#"><i class="fa fa-star"></i> Favoritos<span class="fa arrow"></span></a>
-                        <ul id="bookmark" class="nav nav-second-level"></ul>
-                    </li>
-
-                    <li><a href="~/Requisicao"><i class="fa fa-dashboard fa-arrow-circle-down"></i> Requisição</a></li>
-                    <li>
-                        <a href="#"><i class="fa fa-files-o fa-fw"></i> Documentos<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a href="panels-wells.html">Contábil</a></li>
-                            <li><a href="buttons.html">Fiscal</a></li>
-                            <li><a href="buttons.html">Financeiro</a></li>
-                            <li><a href="notifications.html">Folha</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="forms.html"><i class="fa fa-wrench fa-refresh"></i> Alterar Senha</a></li>
-                </ul>
+                @Html.Partial("_Menu")
             </div>
         </nav>
 

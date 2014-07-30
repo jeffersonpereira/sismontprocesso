@@ -52,8 +52,7 @@ namespace SismontProcessos.Models
 
         public DateTime inicio_gozo { get; set; }
         public DateTime fim_gozo { get; set; }
-        public bool abono { get; set; }
-        public int dias_abono { get; set; }
+        public int? dias_abono { get; set; }
         public int funcionario_id { get; set; }
     }
 }

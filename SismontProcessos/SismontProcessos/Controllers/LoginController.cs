@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace SismontProcessos.Controllers
 {
@@ -11,6 +12,12 @@ namespace SismontProcessos.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public void SignOut()
+        {
+            FormsAuthentication.SignOut();
+            this.RedirectToAction("Index");
         }
     }
 }

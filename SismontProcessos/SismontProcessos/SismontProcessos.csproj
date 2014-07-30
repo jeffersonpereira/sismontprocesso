@@ -951,6 +951,7 @@
     <Content Include="Scripts\angularjs\angular.js" />
     <Content Include="Scripts\angularjs\angular.min.js" />
     <Content Include="Scripts\app\controller\ferias.controller.js" />
+    <Content Include="Scripts\app\controller\global.controller.js" />
     <Content Include="Scripts\app\controller\movimentacao.controller.js" />
     <Content Include="Scripts\app\controller\requisicao.controller.js" />
     <Content Include="Scripts\app\controller\rescisao.controller.js" />
@@ -1351,6 +1352,8 @@
     <Content Include="Views\Requisicao\FuncionarioModal.cshtml" />
     <Content Include="Views\Requisicao\MovimentacaoTemplate.cshtml" />
     <Content Include="Views\Requisicao\Edicao.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\_TopMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
