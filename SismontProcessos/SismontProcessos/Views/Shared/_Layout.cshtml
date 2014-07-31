@@ -16,7 +16,6 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/tema")
     @Scripts.Render("~/scripts/app/factory/api.factory.js")
-    @Scripts.Render("~/scripts/app/controller/global.controller.js")
     
 </head>
 <body>
@@ -50,8 +49,8 @@
             @RenderBody()
         </div>
     </section>
-    <!-- dialog window markup -->
-    <div id="dialog" title="Sua sessão está prestes a expirar!">
+   
+    <div id="sessaoDialog" title="Sua sessão está prestes a expirar!">
         <p>
             <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 50px 0;"></span>
             Você será desconectado em <span id="dialog-countdown" style="font-weight:bold"></span> segundos.
@@ -60,47 +59,43 @@
     </div>
 
     <script type="text/javascript">
-    // setup the dialog
-    //jQuery("#dialog").dialog({
-    //    autoOpen: false,
-    //    modal: true,
-    //    width: 400,
-    //    height: 200,
-    //    closeOnEscape: false,
-    //    draggable: false,
-    //    resizable: false,
-    //    buttons: {
-    //        'Sim, permanecer online': function () {
-    //            jQuery(this).dialog('close');
-    //        },
-    //        'Não, Logoff': function () {
-    //            // fire whatever the configured onTimeout callback is.
-    //            // using .call(this) keeps the default behavior of "this" being the warning
-    //            // element (the dialog in this case) inside the callback.
-    //            jQuery.idleTimeout.options.onTimeout.call(this);
-    //        }
-    //    }
-    //});
+        jQuery("#sessaoDialog").dialog({
+        autoOpen: false,
+        modal: true,
+        width: 400,
+        height: 200,
+        closeOnEscape: false,
+        draggable: false,
+        resizable: false,
+        buttons: {
+            'Sim': function () {
+                jQuery(this).dialog('close');
+            },
+            'Não': function () {
+                jQuery.idleTimeout.options.onTimeout.call(this);
+            }
+        }
+    });
 
-    //// cache a reference to the countdown element so we don't have to query the DOM for it on each ping.
-    //var $countdown = $("#dialog-countdown");
-
-    //// start the idle timer plugin
-    //jQuery.idleTimeout('#dialog', 'div.ui-dialog-buttonpane button:first', {
-    //    idleAfter: 5,
-    //    pollingInterval: 2,
-    //    keepAliveURL: 'keepalive.php',
-    //    serverResponseEquals: 'OK',
-    //    onTimeout: function () {
-    //        window.location = "http://localhost:1328/";
-    //    },
-    //    onIdle: function () {
-    //        jQuery(this).dialog("open");
-    //    },
-    //    onCountdown: function (counter) {
-    //        $countdown.html(counter); // update the counter
-    //    }
-    //});
+    var $countdown = $("#dialog-countdown");
+    jQuery.idleTimeout('#sessaoDialog', 'div.ui-dialog-buttonpane button:first', {
+        idleAfter: 5,
+        pollingInterval: 2880,
+        keepAliveURL: window.location.href,
+        serverResponseEquals: 'OK',
+        onTimeout: function () {
+            var url = "/login/SignOut";
+            $.post(url, function (data) {
+                window.location.href = "/";
+            })
+        },
+        onIdle: function () {
+            jQuery(this).dialog("open");
+        },
+        onCountdown: function (counter) {
+            $countdown.html(counter); 
+        }
+        });
 
     </script>
 

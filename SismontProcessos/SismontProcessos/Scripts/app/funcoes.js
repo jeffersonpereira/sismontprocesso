@@ -39,3 +39,4 @@ var funcionarioController = function ($scope, $modalInstance, funcionarios) {
         $modalInstance.dismiss();
     };
 };
+

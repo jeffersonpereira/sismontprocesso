@@ -69,6 +69,8 @@ namespace SismontProcessos
                       "~/Content/style-md.css",
                       "~/Content/font-awesome.css",
                       "~/Content/jquery-ui.min.css",
+                      "~/Content/jquery-ui.structure.min.css",
+                      "~/Content/jquery-ui.theme.min.css",
                       "~/Content/jasny-bootstrap.min.css",
                       "~/Content/toaster.css"));
         }

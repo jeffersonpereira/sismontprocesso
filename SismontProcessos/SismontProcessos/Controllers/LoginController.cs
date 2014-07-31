@@ -14,10 +14,10 @@ namespace SismontProcessos.Controllers
             return View();
         }
 
-        public void SignOut()
+        public ActionResult SignOut()
         {
             FormsAuthentication.SignOut();
-            this.RedirectToAction("Index");
+            return this.RedirectToAction("Index");
         }
     }
 }
