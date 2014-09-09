@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using SismontProcessos.DB;
 using System.Xml.Serialization;
+using System.IO;
+using System.Xml;
 
 namespace SismontProcessos.Models
 {
@@ -13,10 +15,11 @@ namespace SismontProcessos.Models
     {
         Outros,
         Funcionario,
-        Rescisao,
-        Ferias
+        Ferias,
+        Rescisao
     }
-    [Serializable]
+
+    [XmlRoot("funcionario")]
     public class FuncionarioModel
     {
         public static xerife_requisicao CreateObject(dynamic value)
@@ -49,23 +52,12 @@ namespace SismontProcessos.Models
                     }
                 }
             }
-            var requisisao = new xerife_requisicao();
-            requisisao.tipo = Convert.ToInt32(value.tipo);
-            requisisao.assunto_requisicao_id = Convert.ToInt32(value.assunto_requisicao_id);
-            requisisao.data = DateTime.Today;
-            requisisao.origem = 0;
-            requisisao.situacao = 0;
-            requisisao.filial_id = GlobalVars.FilialId;
-            requisisao.xml = funcionario.ObjectToByteArray();
-            if(value.recursos!=null)
-            {
-                foreach(var recurso in value.recursos)
-                {
-                    requisisao.recurso += recurso + ";";
-                }
-                requisisao.recurso = requisisao.recurso.TrimEnd(';');
-            }
-            requisisao.tipo_requisicao = (int)TipoRequisicao.Funcionario;
+            var requisisao = xerife_requisicao.CreateRequisicao(TipoRequisicao.Funcionario,
+                funcionario,
+                Convert.ToInt32(value.assunto_requisicao_id),
+                Convert.ToInt32(value.prioridade),
+                Convert.ToInt32(value.tipo),
+                value.recursos);
             return requisisao;
         }
 
@@ -84,7 +76,7 @@ namespace SismontProcessos.Models
         public string email { get; set; }
         public string pai { get; set; }
         public string mae { get; set; }
-        public string estado_civil { get; set; }
+        public int estado_civil { get; set; }
         public string conjuge { get; set; }
         public string cpf { get; set; }
         public string rg { get; set; }
@@ -103,12 +95,24 @@ namespace SismontProcessos.Models
         public decimal salario { get; set; }
         public string naturalidade { get; set; }
         public string uf_naturalidade { get; set; }
-        public IList<DependenteModel> dependentes { get; set; }
+        public int raca { get; set; }
+        public int deficiencia { get; set; }
+        public int cabelo { get; set; }
+        public int olhos { get; set; }
+        public decimal peso { get; set; }
+        public decimal altura { get; set; }
+        public string tipo_sanguineo { get; set; }
+        public int grau_instrucao { get; set; }
+        public List<DependenteModel> dependentes { get; set; }
     }
     [Serializable]
     public class DependenteModel
     {
         public string nome { get; set; }
         public DateTime nascimento { get; set; }
+        public string cpf { get; set; }
+        public int tipo { get; set; }
+        public int parentesco { get; set; }
+        public string sexo { get; set; }
     }
 }

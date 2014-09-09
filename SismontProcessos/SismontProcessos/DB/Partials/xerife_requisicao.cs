@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SismontProcessos.Models;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,27 @@ using System.Threading.Tasks;
 
 namespace SismontProcessos.DB
 {
-    public partial class xerife_requisicao:IRequisicao
+    public partial class xerife_requisicao
     {
+        public static xerife_requisicao CreateRequisicao(TipoRequisicao tipo, object objSerialize, int assuntoId, int prioridade, int requisicao, dynamic recursos)
+        {
+            var requisisao = new xerife_requisicao();
+            requisisao.tipo = requisicao;
+            requisisao.prioridade = prioridade;
+            requisisao.assunto_requisicao_id = assuntoId;
+            requisisao.data = DateTime.Today;
+            requisisao.origem = 0;
+            requisisao.situacao = 0;
+            requisisao.filial_id = GlobalVars.FilialId;
+            requisisao.xml = Extensions.SerializeToXml(objSerialize);
+            requisisao.tipo_requisicao = (int)tipo;
+            foreach (var recurso in recursos)
+            {
+                requisisao.recurso += recurso + ";";
+            }
+            requisisao.recurso = requisisao.recurso.TrimEnd(';');
+            return requisisao;
+        }
         public dynamic Tag { get; set; }
         public string prioridade_descricao
         {

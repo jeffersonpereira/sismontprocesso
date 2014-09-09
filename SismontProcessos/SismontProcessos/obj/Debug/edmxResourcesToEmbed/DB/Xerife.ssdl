@@ -2974,6 +2974,7 @@
     <Property Name="regra_acesso_id" Type="int" />
     <Property Name="email" Type="varchar" MaxLength="256" />
     <Property Name="bloquear_acesso_simultaneo" Type="bit" Nullable="false" />
+    <Property Name="modulo_requisicao" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="xerife_usuario_regra">
     <Key>

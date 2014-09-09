@@ -41,6 +41,7 @@ namespace SismontProcessos.DB
         public Nullable<int> regra_acesso_id { get; set; }
         public string email { get; set; }
         public bool bloquear_acesso_simultaneo { get; set; }
+        public bool modulo_requisicao { get; set; }
     
         public virtual ICollection<xerife_pasta_mensagem> xerife_pasta_mensagem { get; set; }
         public virtual ICollection<xerife_permissao_filial> xerife_permissao_filial { get; set; }

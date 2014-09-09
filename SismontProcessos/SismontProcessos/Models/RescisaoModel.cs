@@ -4,10 +4,11 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 using SismontProcessos.DB;
+using System.Xml.Serialization;
 
 namespace SismontProcessos.Models
 {
-    [Serializable]
+    [XmlRoot("rescisao")]
     public class RescisaoModel
     {
         public static xerife_requisicao CreateObject(dynamic value)
@@ -30,26 +31,16 @@ namespace SismontProcessos.Models
                     p.SetValue(rescisao, valor);
                 }
             }
-            var requisisao = new xerife_requisicao();
-            requisisao.tipo = Convert.ToInt32(value.tipo);
-            requisisao.assunto_requisicao_id = Convert.ToInt32(value.assunto_requisicao_id);
-            requisisao.data = DateTime.Today;
-            requisisao.origem = 0;
-            requisisao.situacao = 0;
-            requisisao.filial_id = GlobalVars.FilialId;
-            requisisao.xml = rescisao.ObjectToByteArray();
-            if (value.recursos != null)
-            {
-                foreach (var recurso in value.recursos)
-                {
-                    requisisao.recurso += recurso + ";";
-                }
-                requisisao.recurso = requisisao.recurso.TrimEnd(';');
-            }
-            requisisao.tipo_requisicao = (int)TipoRequisicao.Rescisao;
+            var requisisao = xerife_requisicao.CreateRequisicao(TipoRequisicao.Rescisao,
+                rescisao,
+                Convert.ToInt32(value.assunto_requisicao_id),
+                Convert.ToInt32(value.prioridade),
+                Convert.ToInt32(value.tipo),
+                value.recursos);
             return requisisao;
         }
 
+        public int funcionario_id { get; set; }
         public DateTime data_afastamento { get; set; }
         public string aviso { get; set; }
         public int codigo_aviso { get; set; }

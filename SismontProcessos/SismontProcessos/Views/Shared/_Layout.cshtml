@@ -45,7 +45,7 @@
             </div>
         </nav>
 
-        <div class="page-content">
+        <div class="container-fluid page-content">
             @RenderBody()
         </div>
     </section>
@@ -79,7 +79,7 @@
 
     var $countdown = $("#dialog-countdown");
     jQuery.idleTimeout('#sessaoDialog', 'div.ui-dialog-buttonpane button:first', {
-        idleAfter: 5,
+        idleAfter: 50000,
         pollingInterval: 2880,
         keepAliveURL: window.location.href,
         serverResponseEquals: 'OK',

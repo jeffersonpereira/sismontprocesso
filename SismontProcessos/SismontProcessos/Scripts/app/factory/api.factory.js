@@ -14,6 +14,8 @@ appModule.factory("Api", function ($resource, toaster) {
         Rescisao: $resource('/api/rescisaovalue/:id', {}, this.metodos),
         Funcionario: $resource('/api/funcionariovalue/:id', {}, this.metodos),
         Documento: $resource('/api/documentovalue/:id', {}, this.metodos),
+        Cargo: $resource('/api/cargovalue/:id', {}, this.metodos),
+        GrauInstrucao: $resource('/api/grauinstrucaovalue/:id', {}, this.metodos),
         Movimentacao: $resource('/api/movimentacaovalue/:id',
             {},
             {

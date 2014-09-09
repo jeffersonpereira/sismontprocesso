@@ -20,7 +20,7 @@
                 <div class="form-group col-md-3">
                     <label class="control-label">Data do Aviso</label>
                     <div class="input-group">
-                        <input type="text" class="form-control date" datepicker-popup="dd/MM/yyyy" ng-model="rescisao.data_afastamento" is-open="opened" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required />
+                        <input type="text" class="form-control date" datepicker-popup="dd/MM/yyyy" ng-model="requisicao.data_afastamento" is-open="opened" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required />
                         <span class="input-group-btn">
                             <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                         </span>
@@ -40,10 +40,10 @@
             <div class="row">
                 <div class="form-group col-md-12">
                     <label class="control-label">Observação</label>
-                    <textarea class="form-control" ng-model="ferias.observacao"></textarea>
+                    <textarea class="form-control" ng-model="requisicao.observacao"></textarea>
                 </div>
             </div>
-            <button class="btn btn-primary" type="submit">Salvar</button>
+            <button class="btn btn-primary" type="submit" ng-disabled="form.$invalid">Salvar</button>
             <button class="btn btn-default" type="reset">Limpar</button>
         </form>
         @Html.Partial("FuncionarioModal")

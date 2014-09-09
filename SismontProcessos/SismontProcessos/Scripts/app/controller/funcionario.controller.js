@@ -1,17 +1,18 @@
 ﻿appModule.controller('funcionarioController', function ($scope, $http, $location,$window, $modal, Api) {
-    $scope.funcionario = {};
+    $scope.requisicao = {};
     $scope.dependentes = [];
     $scope.usuarios = Api.Usuario.query();
     $scope.assuntos = Api.Assunto.query();
+    $scope.instrucoes = Api.GrauInstrucao.query();
 
     $scope.add = function () {
-        $scope.funcionario.tipo = $scope.tipo;
-        $scope.funcionario.assunto_requisicao_id = $scope.assunto.assunto_requisicao_id;
-        $scope.funcionario.tipo_requisicao = 'funcionario';
-        $scope.funcionario.recursos = $scope.logins;
-        Api.Requisicao.save($scope.funcionario).$promise.then(function () {
+        $scope.requisicao.assunto_requisicao_id = $scope.assunto.assunto_requisicao_id;
+        $scope.requisicao.tipo_requisicao = 'funcionario';
+        $scope.requisicao.recursos = $scope.logins;
+        $scope.requisicao.grau_instrucao = $scope.instrucao.grau_instrucao_id;
+        Api.Requisicao.save($scope.requisicao).$promise.then(function () {
             Api.Notificacao('Sucesso','Requisição adicionada com sucesso.');
-            $scope.funcionario = null;
+            $scope.requisicao = null;
         }, function () {
             Api.Notificacao('Erro', 'Ocorreu um erro. Verifique as informações e tente novamente.');
         });
@@ -29,7 +30,7 @@
         $scope.logins.push($scope.login)
         $scope.login = '';
     };
-    $scope.funcionario.dependentes = [];
+    $scope.requisicao.dependentes = [];
     $scope.open = function () {
         var modalInstance = $modal.open({
             templateUrl: 'dependente.html',
@@ -37,20 +38,20 @@
         });
         
         modalInstance.result.then(function (dependente) {
-            $scope.funcionario.dependentes.push(dependente);
+            $scope.requisicao.dependentes.push(dependente);
             dependente = null;
         });
     };
 
     $scope.getEndereco = function () {
-        $scope.funcionario.cep = $scope.funcionario.cep.replace('.', '').replace('-', '');
-        if ($scope.funcionario.cep.length == 8) {
-            $http.get('http://cep.correiocontrol.com.br/' + $scope.funcionario.cep + '.json').
+        $scope.requisicao.cep = $scope.requisicao.cep.replace('.', '').replace('-', '');
+        if ($scope.requisicao.cep.length == 8) {
+            $http.get('http://cep.correiocontrol.com.br/' + $scope.requisicao.cep + '.json').
                 success(function (data) {
-                    $scope.funcionario.endereco = data.logradouro;
-                    $scope.funcionario.bairro = data.bairro;
-                    $scope.funcionario.uf = data.uf;
-                    $scope.funcionario.municipio = data.localidade;
+                    $scope.requisicao.endereco = data.logradouro;
+                    $scope.requisicao.bairro = data.bairro;
+                    $scope.requisicao.uf = data.uf;
+                    $scope.requisicao.municipio = data.localidade;
                 });
         }
     }
@@ -63,7 +64,7 @@
         ]
 
     $scope.gridDependentes = {
-        data: 'funcionario.dependentes',
+        data: 'requisicao.dependentes',
         columnDefs: this.columns,
         multiSelect: false,
         i18n: 'pt-br'

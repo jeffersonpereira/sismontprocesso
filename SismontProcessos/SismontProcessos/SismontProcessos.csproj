@@ -226,9 +226,11 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AssuntoValueController.cs" />
+    <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\DocumentoController.cs" />
     <Compile Include="Controllers\DocumentoValueController.cs" />
     <Compile Include="Controllers\FuncionarioValueController.cs" />
+    <Compile Include="Controllers\GrauInstrucaoValueController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LoginValueController.cs" />

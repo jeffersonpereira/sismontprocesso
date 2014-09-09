@@ -22,26 +22,30 @@
         $scope.login = '';
     };
 
-    $scope.ferias = {};
+    $scope.requisicao = {};
     $scope.add = function () {
-        $scope.ferias.tipo = $scope.tipo;
-        $scope.ferias.assunto_requisicao_id = $scope.assunto.assunto_requisicao_id;
-        $scope.ferias.tipo_requisicao = 'ferias';
-        $scope.ferias.inicio_gozo = dateFormat($scope.ferias.inicio_gozo);
-        $scope.ferias.fim_gozo = dateFormat($scope.ferias.fim_gozo);
-        $scope.ferias.recursos = $scope.logins;
-        Api.Requisicao.save($scope.ferias).$promise.then(function () {
+        $scope.requisicao.assunto_requisicao_id = $scope.assunto.assunto_requisicao_id;
+        $scope.requisicao.tipo_requisicao = 'ferias';
+        $scope.requisicao.inicio_gozo = dateFormat($scope.requisicao.inicio_gozo);
+        $scope.requisicao.fim_gozo = dateFormat($scope.requisicao.fim_gozo);
+        $scope.requisicao.recursos = $scope.logins;
+        Api.Requisicao.save($scope.requisicao).$promise.then(function () {
             Api.Notificacao('Sucesso', 'Requisição adicionada com sucesso.');
-            $scope.ferias = null;
+            $scope.requisicao = null;
         }, function (erro) {
             Api.Notificacao('Erro', erro);
         });
     };
 
-    $scope.openCalendar = function ($event) {
+    $scope.openCalendar = function ($event,buttonId) {
         $event.preventDefault();
         $event.stopPropagation();
-        $scope.opened = true;
+        if (buttonId == 1) {
+            $scope.opened1 = true;
+        }
+        else {
+            $scope.opened2 = true;
+        }
     };
 
     /*Modal*/
@@ -57,7 +61,7 @@
         });
         modalInstance.result.then(function (funcionario) {
             $scope.funcionario = funcionario;
-            $scope.ferias.funcionario_id = funcionario.funcionario_id;
+            $scope.requisicao.funcionario_id = funcionario.funcionario_id;
         });
     }
 });

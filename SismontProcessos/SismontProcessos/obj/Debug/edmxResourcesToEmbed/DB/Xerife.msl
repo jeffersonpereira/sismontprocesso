@@ -3145,6 +3145,7 @@
     <EntitySetMapping Name="xerife_usuario">
       <EntityTypeMapping TypeName="Xerife.Model.xerife_usuario">
         <MappingFragment StoreEntitySet="xerife_usuario">
+          <ScalarProperty Name="modulo_requisicao" ColumnName="modulo_requisicao" />
           <ScalarProperty Name="bloquear_acesso_simultaneo" ColumnName="bloquear_acesso_simultaneo" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="regra_acesso_id" ColumnName="regra_acesso_id" />

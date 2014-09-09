@@ -23,30 +23,30 @@
                     @*<input type="text" class="form-control datepicker" ng-model="ferias.inicio_gozo" data-provide="datepicker" data-date-format="dd/mm/yyyy" />*@
                     <div class="input-group">
 
-                        <input type="text" class="form-control date" datepicker-popup="dd/MM/yyyy" ng-model="ferias.inicio_gozo" is-open="opened" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required />
+                        <input type="text" class="form-control date" datepicker-popup="dd/MM/yyyy" ng-model="requisicao.inicio_gozo" is-open="opened1" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required />
                         <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                            <button type="button" class="btn btn-default" ng-click="openCalendar($event,1)"><i class="glyphicon glyphicon-calendar"></i></button>
                         </span>
                     </div>
                 </div>
                 <div class="form-group col-md-3">
                     <label class="control-label">Fim do Gozo</label>
                     <div class="input-group">
-                        <input type="text" class="form-control date" datepicker-popup="dd/MM/yyyy" ng-model="ferias.fim_gozo" is-open="opened" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required />
+                        <input type="text" class="form-control date" datepicker-popup="dd/MM/yyyy" ng-model="requisicao.fim_gozo" is-open="opened2" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" required />
                         <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="openCalendar($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                            <button type="button" class="btn btn-default" ng-click="openCalendar($event,2)"><i class="glyphicon glyphicon-calendar"></i></button>
                         </span>
                     </div>
                 </div>
                 <div class="form-group col-md-2">
                     <label class="control-label">Dias Abono</label>
-                    <input type="number" class="form-control" ng-model="ferias.dias_abono" />
+                    <input type="number" class="form-control" ng-model="requisicao.dias_abono" />
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-12">
                     <label class="control-label">Observação</label>
-                    <textarea class="form-control" ng-model="ferias.observacao"></textarea>
+                    <textarea class="form-control" ng-model="requisicao.observacao"></textarea>
                 </div>
 
             </div>

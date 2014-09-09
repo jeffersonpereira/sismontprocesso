@@ -5152,6 +5152,7 @@
     <Property Name="regra_acesso_id" Type="Int32" />
     <Property Name="email" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
     <Property Name="bloquear_acesso_simultaneo" Type="Boolean" Nullable="false" />
+    <Property Name="modulo_requisicao" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="xerife_pasta_mensagem" Relationship="Xerife.Model.fk_xerife_usuario_to_pasta_mensagem" FromRole="xerife_usuario" ToRole="xerife_pasta_mensagem" />
     <NavigationProperty Name="xerife_permissao_filial" Relationship="Xerife.Model.fk_xerife_usuario_to_permissao_filial" FromRole="xerife_usuario" ToRole="xerife_permissao_filial" />
     <NavigationProperty Name="xerife_regra_acesso" Relationship="Xerife.Model.fk_xerife_regra_acesso_to_usuario" FromRole="xerife_usuario" ToRole="xerife_regra_acesso" />

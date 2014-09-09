@@ -40,13 +40,18 @@ namespace SismontProcessos
             return obj;
         }
 
-        public static byte[] SerializeToXml<T>(this T value)
+        public static byte[] SerializeToXml(Object value)
         {
-            XmlSerializer xmlserializer = new XmlSerializer(typeof(T));
-            StringWriter stringWriter = new StringWriter();
-            XmlWriter writer = XmlWriter.Create(stringWriter);
-            xmlserializer.Serialize(writer, value);
-            return stringWriter.ToString().ObjectToByteArray();
+            if(value==null)
+            {
+                return null;
+            }
+            XmlSerializer serializer = new XmlSerializer(value.GetType());
+            string fileName = string.Format("{0}_{1:ddMMyyyyHHmmss}.xml","file",DateTime.Now);
+            StreamWriter writer = new StreamWriter(fileName);
+            serializer.Serialize(writer.BaseStream, value);
+            writer.Close();
+            return System.IO.File.ReadAllBytes(fileName);
         }
     }
 }

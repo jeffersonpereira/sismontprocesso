@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace SismontProcessos.Controllers
 {
@@ -11,8 +14,8 @@ namespace SismontProcessos.Controllers
     {
         public ActionResult Index()
         {
-            var teste = new RequisicaoValueController();
-            ViewBag.Total = teste.GetRequisicao().Count();
+            var requisicoes = new RequisicaoValueController();
+            ViewBag.Total = requisicoes.GetRequisicao().Count();
             return View();
         }
     }
